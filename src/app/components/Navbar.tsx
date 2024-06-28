@@ -15,7 +15,7 @@ export default function Navbar() {
         <nav className="flex justify-between items-center py-4 md:py-6 w-full px-4 bg-transparent">
             <Link href="#" className="flex items-center justify-center" prefetch={false}>
                     <DropletsIcon className="h-6 w-6" />
-                    <span className="font-bold text-xl">Jeevan Saathi</span>
+                    <span className="font-serif font-bold text-xl tracking-[-1px]">Jeevan Saathi</span>
             </Link>
             <div className="flex gap-2 md:gap-4 items-center">
                 {!isAuthenticated() ? (
