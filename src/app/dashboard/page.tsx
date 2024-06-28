@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 const Dashboard: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
@@ -33,10 +32,12 @@ const Dashboard: React.FC = () => {
       {/* Middle Sections */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         {/* Look for Blood Donors Section */}
+        <Link href="../blooddonor">
         <div className="bg-white p-6 shadow-lg rounded-lg">
           <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Blood Donors</h2>
           <p className="text-gray-600">Find blood donors in your area.</p>
         </div>
+        </Link>
 
         {/* Look for Blood Camps Section */}
         <div className="bg-white p-6 shadow-lg rounded-lg">
