@@ -1,6 +1,9 @@
-"use client";
+'use client'
 import React, { useState, useEffect, useRef } from "react";
 import { FaPaperPlane } from "react-icons/fa";
+import { RiMessage3Fill } from "react-icons/ri";
+import { IoClose } from "react-icons/io5";
+
 import axios from "axios";
 import ReactMarkdown from "react-markdown";
 
@@ -69,13 +72,13 @@ const Chatbot: React.FC = () => {
     <div className="fixed bottom-4 right-4 flex flex-col items-end h-screen z-50">
       <button
         onClick={() => setIsChatbotVisible(!isChatbotVisible)}
-        className="bg-red-500 hover:bg-red-600 text-white p-3 rounded-full shadow-lg"
+        className="bg-red-500 hover:bg-red-600 text-white p-4 rounded-full shadow-lg absolute bottom-3"
       >
-        {isChatbotVisible ? "Close" : "Open"}
+        {isChatbotVisible ? <IoClose className="w-6 h-6" /> : <RiMessage3Fill className="w-6 h-6" />}
       </button>
       {isChatbotVisible && (
-        <div className="bg-white w-80 h-96 shadow-lg rounded-lg overflow-hidden mt-4">
-          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4 ">
+        <div className="bg-white w-80 h-96 shadow-lg rounded-lg overflow-hidden mt-4 absolute bottom-16 right-12">
+          <div className="bg-gradient-to-r from-red-500 to-red-600 p-4">
             <h1 className="text-white text-lg font-bold text-center">Welcome to Jeevansathi</h1>
           </div>
           <div className="p-4 h-64 overflow-y-auto">
@@ -116,7 +119,7 @@ const Chatbot: React.FC = () => {
             />
             <button
               onClick={handleSendMessage}
-              className="ml-2 bg-red-500 hover:bg-red-600 text-white p-3 rounded-full"
+              className="ml-2 bg-red-500 hover:bg-red-600 text-white p-4 rounded-full"
             >
               <FaPaperPlane />
             </button>

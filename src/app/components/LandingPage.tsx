@@ -206,17 +206,6 @@ export default function LandingPage() {
                     </div>
                 </section>
             </main>
-            <footer className="bg-gray-800 text-white py-4">
-                <div className="container mx-auto px-4 md:px-6">
-                    <div className="flex flex-col items-center justify-between sm:flex-row">
-                        <Link href="#" className="flex items-center justify-center" prefetch={false}>
-                            <DropletsIcon className="h-6 w-6" />
-                            <span className="font-bold text-xl">Jeevan Saathi</span>
-                        </Link>
-                        <p className="mt-2 sm:mt-0">&copy; 2024 Jeevan Saathi. All rights reserved.</p>
-                    </div>
-                </div>
-            </footer>
         </div>
     );
 }
