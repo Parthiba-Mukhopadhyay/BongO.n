@@ -12,7 +12,7 @@ export default function Navbar() {
 
     return (
         <nav className="flex justify-between items-center py-4 md:py-6 w-full px-4 bg-transparent">
-            <h1 className="text-xl font-extrabold md:text-2xl px-2 md:px-4 py-1 md:py-2 rounded bg-black text-white">Todo.AI</h1>
+            <h1 className="text-xl font-extrabold md:text-2xl px-2 md:px-4 py-1 md:py-2 rounded bg-black text-white">JeevanSathi</h1>
             <div className="flex gap-2 md:gap-4 items-center">
                 {!isAuthenticated() ? (
                     <>

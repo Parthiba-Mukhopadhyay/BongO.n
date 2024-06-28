@@ -17,8 +17,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <Navbar/>
-      <body className={inter.className}>{children}</body>
+       <body className="flex flex-col min-h-screen">
+          <Navbar />
+          <main className="flex-grow p-4 md:p-8 lg:p-16">
+            {children}
+          </main>
+      </body>
     </html>
   );
 }
