@@ -20,7 +20,7 @@ const Chatbot: React.FC = () => {
       try {
         setLoading(true);
         const response = await axios.post(
-          `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=AIzaSyBWMPt7TWphIsiSUrWysX5CqM_INSVKG1s`,
+          process.env.NEXT_PUBLIC_AI_KEY ?? "",
           {
             contents: [
               {
