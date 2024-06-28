@@ -1,4 +1,7 @@
 import Link from 'next/link';
+import Image from 'next/image';
+import img1 from '../assets/BloodDonation.jpeg';
+import img2 from '../assets/Doctor.jpeg';
 
 export default function LandingPage() {
     return (
@@ -18,18 +21,19 @@ export default function LandingPage() {
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                                    <input
-                                        type="text"
-                                        placeholder="Search by location or blood type"
-                                        className="max-w-lg flex-1 bg-gray-700 text-white p-2 rounded-lg focus:bg-gray-600"
-                                    />
                                     <button type="submit" className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-500">
-                                        Search
+                                        Register Now!!
                                     </button>
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center space-y-4">
-                                
+                            <Image
+                                src={img1}
+                                width="550"
+                                height="310"
+                                alt="Image"
+                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                            />
                             </div>
                         </div>
                     </div>
@@ -76,6 +80,15 @@ export default function LandingPage() {
                                     </li>
                                 </ul>
                             </div>
+                            <div className="flex flex-col justify-center space-y-4">
+                                <Image
+                                    src={img2}
+                                    width="550"
+                                    height="310"
+                                    alt="Image"
+                                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
+                                />
+                            </div>
                         </div>
                     </div>
                 </section>
@@ -91,7 +104,13 @@ export default function LandingPage() {
                         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                             <div className="p-6 space-y-4 bg-gray-800 rounded-lg">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
+                                    <Image 
+                                        src={img1}
+                                        width="48"
+                                        height="48"
+                                        alt="Image"
+                                        className="w-12 h-12 bg-gray-700 rounded-full"
+                                    />
                                     <div>
                                         <p className="text-sm font-medium">John Doe</p>
                                         <p className="text-sm text-gray-400">Blood Recipient</p>
@@ -104,7 +123,13 @@ export default function LandingPage() {
                             </div>
                             <div className="p-6 space-y-4 bg-gray-800 rounded-lg">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
+                                <Image 
+                                        src={img1}
+                                        width="48"
+                                        height="48"
+                                        alt="Image"
+                                        className="w-12 h-12 bg-gray-700 rounded-full"
+                                    />
                                     <div>
                                         <p className="text-sm font-medium">Jane Smith</p>
                                         <p className="text-sm text-gray-400">Blood Donor</p>
@@ -117,7 +142,13 @@ export default function LandingPage() {
                             </div>
                             <div className="p-6 space-y-4 bg-gray-800 rounded-lg">
                                 <div className="flex items-center gap-4">
-                                    <div className="w-12 h-12 bg-gray-700 rounded-full"></div>
+                                <Image 
+                                        src={img1}
+                                        width="48"
+                                        height="48"
+                                        alt="Image"
+                                        className="w-12 h-12 bg-gray-700 rounded-full"
+                                    />
                                     <div>
                                         <p className="text-sm font-medium">Michael Johnson</p>
                                         <p className="text-sm text-gray-400">Blood Bank Manager</p>
