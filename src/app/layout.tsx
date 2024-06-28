@@ -17,9 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-       <body className="flex flex-col min-h-screen">
+       <body className="flex flex-col min-h-screen bg-gray-900">
           <Navbar />
-          <main className="flex-grow p-4 md:p-8 lg:p-16">
+          <main className="flex-grow w-full">
             {children}
           </main>
           <Chatbot/>
