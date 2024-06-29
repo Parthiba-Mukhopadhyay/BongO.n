@@ -117,7 +117,7 @@ const Dashboard: React.FC = () => {
             Spotlight
           </h2>
           <ul className="text-blue-600 cursor-pointer list-disc text-xl">
-            {camps.slice(0, 4).map((camp) => (
+            {camps.slice(0, 6).map((camp) => (
               <li key={camp.campName}>
                 <a
                   href={camp.website}

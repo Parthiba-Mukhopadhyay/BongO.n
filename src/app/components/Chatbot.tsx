@@ -86,7 +86,7 @@ const Chatbot: React.FC = () => {
           <div className="bg-gradient-to-r from-red-500 to-red-600 p-4">
             <h1 className="text-white text-lg font-bold text-center">Welcome to PAW-sitive</h1>
           </div>
-          <div className="p-4 h-full overflow-y-auto">
+          <div className="p-4 h-[420px] overflow-y-auto">
             {messages.map((msg, index) => (
               <div
                 key={index}
