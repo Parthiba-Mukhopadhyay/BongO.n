@@ -12,6 +12,7 @@
     "@kinde-oss/kinde-auth-nextjs": "^1.8.9",
     "axios": "^1.7.2",
     "dotenv": "^16.4.5",
+    "mongodb": "^6.8.0",
     "next": "14.2.4",
     "react": "^18",
     "react-dom": "^18",

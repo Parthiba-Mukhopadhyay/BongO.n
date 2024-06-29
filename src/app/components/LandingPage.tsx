@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import img1 from '../assets/BloodDonation.jpeg';
 import img2 from '../assets/Doctor.jpeg';
+import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs/server';
 
 export default function LandingPage() {
     return (
@@ -21,9 +22,9 @@ export default function LandingPage() {
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
-                                    <button type="submit" className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-500">
+                                    <RegisterLink className="bg-red-600 text-white p-2 rounded-lg hover:bg-red-500">
                                         Register Now!!
-                                    </button>
+                                    </RegisterLink>
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center space-y-4">
