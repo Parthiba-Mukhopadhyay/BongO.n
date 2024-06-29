@@ -145,7 +145,7 @@ const CallRequest: React.FC = () => {
                     </div>
                 ) : !otpVerified ? (
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Enter OTP</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-black">Enter OTP</h2>
                         <input
                             type="text"
                             value={otp}
@@ -162,11 +162,11 @@ const CallRequest: React.FC = () => {
                     </div>
                 ) : (
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Select a Subscriber</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-black">Select a Subscriber</h2>
                         <ul className="mb-4">
                             {subscribers.map(subscriber => (
-                                <li key={subscriber.id} className="flex justify-between items-center border-b py-2">
-                                    <span>{subscriber.first_name} {subscriber.last_name}</span>
+                                <li key={subscriber.id} className="flex justify-between items-center border-b py-2 text-black">
+                                    <span className='text-black'>{subscriber.first_name} {subscriber.last_name}</span>
                                     <button 
                                         onClick={() => createCall(subscriber.id)}
                                         className="bg-green-500 text-black py-1 px-2 rounded hover:bg-green-600"
