@@ -1,5 +1,9 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import { headers } from 'next/headers';
+
+export const dynamic = "force-dynamic";
 
 interface RescueCenter {
   centerName: string;
@@ -10,12 +14,15 @@ interface RescueCenter {
   website: string;
 }
 
-// Function to fetch rescue centers from the API using fetch()
+// Function to fetch rescue centers from the API
 const fetchRescueCenters = async (): Promise<RescueCenter[]> => {
   try {
-    const response = await fetch('/api/rescuecenters', { cache: 'no-store' });
-    const data = await response.json();
-    return data.map((item: any) => ({
+    const response = await axios.get('/api/rescuecenters',{
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
+    return response.data.map((item: any) => ({
       centerName: item.centerName,
       city: item.city,
       operatingHours: item.operatingHours,
@@ -131,5 +138,4 @@ const Rescuecenter: React.FC = () => {
   );
 };
 
-export const dynamic = "force-dynamic";
 export default Rescuecenter;

@@ -14,12 +14,16 @@ interface BloodBank {
 
 const fetchBloodBank = async (): Promise<BloodBank[]> => {
   try {
-    const response = await axios.get('/api/vets',{
-      headers: {
-        'Cache-Control': 'no-cache',
-      },
+    const response = await fetch('/api/vets', {
+      cache: 'no-store'
     });
-    return response.data.map((item: any) => ({
+
+    if (!response.ok) {
+      throw new Error(`Failed to fetch blood bank data: ${response.statusText}`);
+    }
+
+    const data = await response.json();
+    return data.map((item: any) => ({
       name: `${item.clinicName}`,
       location: item.city,
       email: item.email,
@@ -31,6 +35,7 @@ const fetchBloodBank = async (): Promise<BloodBank[]> => {
     return [];
   }
 };
+
 
 
 
