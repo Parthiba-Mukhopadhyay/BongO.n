@@ -186,17 +186,20 @@ Follow these steps to start and run the PAWsitive project locally:
    cd BongO.n
    ```
 
-3. **Install dependencies**:
+3. **Create a `.env.local` file**:
+   Add your API keys for Kinde, Next.js, MongoDB, Gemini, and Uploadlink in the `.env.local` file.
+
+4. **Install dependencies**:
    ```bash
    npm install
    ```
 
-4. **Run the development server**:
+5. **Run the development server**:
    ```bash
    npm run dev
    ```
 
-5. **Open your browser**:
+6. **Open your browser**:
    Navigate to `http://localhost:3000` to see the application running.
 
 ## Walkthrough of the Project
@@ -204,23 +207,22 @@ Follow these steps to start and run the PAWsitive project locally:
 Here are the steps to navigate through the PAWsitive application:
 
 1. **Landing Page**: The homepage of the PAWsitive application.
-![landing](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed" width="600" height="400" />
 
 2. **Login/Sign Up**: Authenticate users via Kinde for secure access.
-![sign in](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/721091c4-89a3-4a5c-a24a-9b5eb5e45c53)
-![sign up](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/df6d5c0e-ac9a-4baf-ab2d-93d0e3595d4d)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/721091c4-89a3-4a5c-a24a-9b5eb5e45c53" width="300" height="400" /> <img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/df6d5c0e-ac9a-4baf-ab2d-93d0e3595d4d" width="300" height="400" />
 
 3. **Dashboard**: The main interface with access to all features.
  - **Spotlight Section**: Highlight ongoing projects and campaigns.
  - **Call Support**: Access voice assistant support powered by Callchimp.AI.
-![dashboard1](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/2ddb3b0e-2002-45f6-9648-b0f91956d4f2)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/2ddb3b0e-2002-45f6-9648-b0f91956d4f2" width="600" height="400" />
 
  - **Services**:
    - **View Donors**: Search and filter through blood donors.
    - **View Veterinary Clinics**: Locate nearby veterinary clinics.
    - **View Rescue Centers**: Find rescue centers and ambulance services.
 
-![dashboard2](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/c9c66679-9674-4ff0-96be-3454ef8a1bf5)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/c9c66679-9674-4ff0-96be-3454ef8a1bf5" width="600" height="400" />
 
  - **Collaborations**:
    - **Register as Donor**: Sign up as a blood donor.
@@ -228,11 +230,11 @@ Here are the steps to navigate through the PAWsitive application:
    - **Register as Rescue Center**: Enroll a rescue center.
    - **Register Events and Campaigns**: Organize events and campaigns.
      
-![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/f9c35cfa-00b5-4e1a-825a-b20960de4db4)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/f9c35cfa-00b5-4e1a-825a-b20960de4db4" width="600" height="400" />
 
 
 4. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
-![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290)
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290" width="600" height="400" />
 
 
 ## Detailed Working of the Project
