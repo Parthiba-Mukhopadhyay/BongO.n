@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 interface RescueCenter {
   centerName: string;
@@ -10,31 +11,39 @@ interface RescueCenter {
   website: string;
 }
 
-const predefinedRescueCenters: RescueCenter[] = [
-  {
-    centerName: 'City Rescue Center',
-    city: 'New York',
-    operatingHours: '24/7',
-    contact: '123-456-7890',
-    email: 'cityrescue@example.com',
-    website: 'http://www.cityrescuecenter.com',
-  },
-  {
-    centerName: 'Quick Response Rescue',
-    city: 'Los Angeles',
-    operatingHours: '9 AM - 5 PM',
-    contact: '234-567-8901',
-    email: 'quickresponse@example.com',
-    website: 'http://www.quickrescue.com',
-  },
-  // Add more predefined rescue centers as needed
-];
+// Function to fetch rescue centers from the API
+const fetchRescueCenters = async (): Promise<RescueCenter[]> => {
+  try {
+    const response = await axios.get('/api/rescuecenters'); // Adjust the URL as necessary
+    return response.data.map((item: any) => ({
+      centerName: item.centerName,
+      city: item.city,
+      operatingHours: item.operatingHours,
+      contact: item.contactNumber,
+      email: item.email,
+      website: item.website,
+    }));
+  } catch (error) {
+    console.error('Error fetching rescue center data:', error);
+    return [];
+  }
+};
 
 const Rescuecenter: React.FC = () => {
-  const [rescueCenters, setRescueCenters] = useState<RescueCenter[]>(predefinedRescueCenters);
+  const [rescueCenters, setRescueCenters] = useState<RescueCenter[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
-  const [filteredRescueCenters, setFilteredRescueCenters] = useState<RescueCenter[]>(predefinedRescueCenters);
+  const [filteredRescueCenters, setFilteredRescueCenters] = useState<RescueCenter[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchRescueCenters();
+      setRescueCenters(data);
+      setFilteredRescueCenters(data);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let sortedRescueCenters = [...rescueCenters];
@@ -44,27 +53,32 @@ const Rescuecenter: React.FC = () => {
     }
 
     setFilteredRescueCenters(
-      sortedRescueCenters.filter(center =>
-        center.centerName.toLowerCase().includes(searchTerm.toLowerCase())
-      )
+      sortedRescueCenters.filter(center => {
+        const searchLower = searchTerm.toLowerCase();
+        if (sortOption === 'city') {
+          return center.city.toLowerCase().includes(searchLower);
+        } else {
+          return center.centerName.toLowerCase().includes(searchLower);
+        }
+      })
     );
   }, [rescueCenters, searchTerm, sortOption]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
       <div className="max-w-4xl mx-auto">
-        <section className=" text-gray-900 p-6 rounded-lg shadow-lg mb-6">
+        <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6 bg-opacity-50">
           <h1 className="text-3xl font-bold text-red-600">Welcome to the Rescue Centers Directory</h1>
           <p className="mt-2 text-gray-500">
             Find the nearest rescue centers and check their information.
           </p>
         </section>
 
-        <section className=" text-gray-900 p-6 rounded-lg shadow-lg mb-6">
+        <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <input
               type="text"
-              placeholder="Search by name..."
+              placeholder={`Search by ${sortOption === 'city' ? 'city' : 'name'}...`}
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="border border-gray-300 rounded-md px-3 py-2 mb-4 md:mb-0 md:mr-4 flex-grow"
@@ -74,7 +88,7 @@ const Rescuecenter: React.FC = () => {
               onChange={(e) => setSortOption(e.target.value)}
               className="border border-gray-300 rounded-md px-3 py-2 mb-4 md:mb-0 md:mr-4"
             >
-              <option value="">Sort by...</option>
+              <option value="">Search by...</option>
               <option value="city">City</option>
             </select>
             <button
@@ -86,7 +100,7 @@ const Rescuecenter: React.FC = () => {
           </div>
         </section>
 
-        <section className=" text-gray-100 p-6 rounded-lg shadow-lg overflow-x-scroll no-scrollbar">
+        <section className="text-gray-100 p-6 rounded-lg shadow-lg overflow-x-scroll no-scrollbar">
           <table className="w-full table-auto">
             <thead>
               <tr>
