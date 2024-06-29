@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
+export const dynamic = "force-dynamic";
+
 interface BloodBank {
   name: string;
   location: string;

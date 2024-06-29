@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { headers } from 'next/headers';
 
+export const dynamic = "force-dynamic";
+
 interface RescueCenter {
   centerName: string;
   city: string;
