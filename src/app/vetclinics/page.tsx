@@ -67,14 +67,14 @@ const Vetclinics: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
       <div className="max-w-4xl mx-auto">
-        <section className="bg-white text-gray-900 p-6 rounded-lg shadow-lg mb-6">
+        <section className=" text-gray-900 p-6 rounded-lg shadow-lg mb-6">
           <h1 className="text-3xl font-bold text-red-600">Welcome to the Blood Bank Directory</h1>
-          <p className="mt-2 text-gray-700">
+          <p className="mt-2 text-gray-500">
             Find the nearest blood banks and check their available inventory.
           </p>
         </section>
 
-        <section className="bg-white text-gray-900 p-6 rounded-lg shadow-lg mb-6">
+        <section className=" text-gray-900 p-6 rounded-lg shadow-lg mb-6">
           <div className="flex flex-col md:flex-row md:items-center md:justify-between">
             <input
               type="text"
@@ -100,7 +100,7 @@ const Vetclinics: React.FC = () => {
           </div>
         </section>
 
-        <section className="bg-white text-gray-900 p-6 rounded-lg shadow-lg">
+        <section className=" text-gray-100 p-6 rounded-lg shadow-lg overflow-x-scroll no-scrollbar">
           <table className="w-full table-auto">
             <thead>
               <tr>
