@@ -22,7 +22,7 @@ const predefinedAmbulanceServices: AmbulanceService[] = [
   { name: 'Trust Ambulance', area: 'San Jose', ambulanceAvailable: true, oxygenAvailable: true, contact: '012-345-6789' },
 ];
 
-const Ambulance: React.FC = () => {
+const Rescuecenter: React.FC = () => {
   const [ambulanceServices, setAmbulanceServices] = useState<AmbulanceService[]>(predefinedAmbulanceServices);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
@@ -125,4 +125,4 @@ const Ambulance: React.FC = () => {
   );
 };
 
-export default Ambulance;
+export default Rescuecenter;

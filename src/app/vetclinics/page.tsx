@@ -30,7 +30,7 @@ const predefinedBloodBanks: BloodBank[] = [
   { name: 'Hope Blood Bank', location: 'San Jose', inventory: { 'A+': 10, 'A-': 5, 'B+': 8, 'B-': 4, 'AB+': 6, 'AB-': 2, 'O+': 12, 'O-': 3 }, contact: '012-345-6789' },
 ];
 
-const Bloodbank: React.FC = () => {
+const Vetclinics: React.FC = () => {
   const [bloodBanks, setBloodBanks] = useState<BloodBank[]>(predefinedBloodBanks);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
@@ -141,4 +141,4 @@ const Bloodbank: React.FC = () => {
   );
 };
 
-export default Bloodbank;
+export default Vetclinics;

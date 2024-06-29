@@ -21,7 +21,7 @@ const predefinedDonors: Donor[] = [
   { name: 'Emma Purple', bloodGroup: 'O-', area: 'San Jose', contact: '012-345-6789' },
 ];
 
-const BloodDonor: React.FC = () => {
+const Dogdonor: React.FC = () => {
   const [donors, setDonors] = useState<Donor[]>(predefinedDonors);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
@@ -121,4 +121,4 @@ const BloodDonor: React.FC = () => {
   );
 };
 
-export default BloodDonor;
+export default Dogdonor;
