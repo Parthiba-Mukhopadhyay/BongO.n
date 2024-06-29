@@ -76,7 +76,7 @@ export default function PetMedicalCampRegistrationForm() {
 
   return (
     <div className="max-w-md mx-auto mt-10">
-      <form onSubmit={registerHandler} className="bg-white shadow-md rounded px-8 py-6 overflow-y-scroll h-[500px]">
+      <form onSubmit={registerHandler} className="rounded px-8 py-6 overflow-y-scroll h-[500px]">
         {/* Form Fields */}
         {['campName', 'location', 'city', 'state', 'zipCode', 'contactNumber', 'email', 'website', 'servicesProvided', 'eventDates'].map((field) => (
           <div className="mb-4" key={field}>
