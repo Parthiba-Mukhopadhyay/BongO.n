@@ -139,8 +139,8 @@ export default function ExtendedEmailSubscriptionForm() {
             onChange={handleChange}
             required
           >
-            <option value="Affected with Serious Illness">Affected with Serious Illness</option>
-            <option value="Not affected with serious illness">Not affected with serious illness</option>
+            <option value="Affected with Serious Illness">Affected</option>
+            <option value="Not affected with serious illness">Not affected</option>
           </select>
         </div>
 
@@ -156,8 +156,8 @@ export default function ExtendedEmailSubscriptionForm() {
             onChange={handleChange}
             required
           >
-            <option value="Affected with Tick Fever and Fleas">Affected with Tick Fever and Fleas</option>
-            <option value="Not Affected with Tick Fever or Fleas">Not Affected with Tick Fever or Fleas</option>
+            <option value="Affected with Tick Fever and Fleas">Affected</option>
+            <option value="Not Affected with Tick Fever or Fleas">Not Affected</option>
           </select>
         </div>
 

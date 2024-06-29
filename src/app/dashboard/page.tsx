@@ -1,10 +1,12 @@
 'use client';
 import React, { useState,useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
 import CallRequest from "../components/CallRequest";
+import logo from "/public/callchimp.svg";
 
 interface CampData {
   campName: string;
@@ -43,12 +45,12 @@ const Dashboard: React.FC = () => {
   const [isModalMedicalOpen, setModalMedicalOpen] = useState(false);
 
   const openModalMedical = () => {
-    fetchCamps();
     setModalMedicalOpen(true);
   };
 
   const closeModalMedical = () => {
     setModalMedicalOpen(false);
+    fetchCamps();
   };
 
   const [isModalRescueOpen, setModalRescueOpen] = useState(false);
@@ -99,7 +101,7 @@ const Dashboard: React.FC = () => {
       {/* Spotlight and Emergency Contact Section */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Spotlight</h2>
+          <h2 className="text-2xl font-bold mb-4 bg-gradient-to-r bg-clip-text text-transparent from-red-700 via-blue-500 to-yellow-500 animate-text">Spotlight</h2>
           <ul className="text-blue-600 cursor-pointer list-disc text-xl">
             {camps.slice(0,4).map((camp) => (
               <li key={camp.campName}>
@@ -107,22 +109,13 @@ const Dashboard: React.FC = () => {
                   {camp.campName} camp is going on at {camp.location} on {camp.eventDates}
                 </a>
               </li>
-            ))}
+            ))||<li>No Camps Found</li>}
           </ul>
         </div>
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Emergency Contact</h2>
-          <p className="text-gray-600">
-            Contact your local rescue center for immediate assistance.
-          </p>
-          <div className="mt-4 text-gray-600">
-            Other emergency contacts:
-            <ul className="list-disc list-inside">
-              <li>Rescue Center: 123-456-7890</li>
-              <li>Emergency Vet: 098-765-4321</li>
-              <li>Animal Control: 111-222-3333</li>
-            </ul>
-          </div>
+        <div className="bg-white p-6 shadow-lg rounded-lg grid place-items-center">
+          {logo && <Image src={logo} alt="Call Chimp Logo" className="w-10" />}
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">Call Chimp Assistant</h2>
+          <CallRequest />
         </div>
       </div>
 

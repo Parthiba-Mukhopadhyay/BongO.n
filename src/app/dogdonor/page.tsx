@@ -22,7 +22,7 @@ const fetchDonors = async (): Promise<Donor[]> => {
     const response = await axios.get('/api/donors'); // Adjust the URL as necessary
     return response.data.map((item: any) => ({
       name: `${item.firstName} ${item.lastName}`,
-      location: `${item.address}, ${item.city}, ${item.state}, ${item.pinCode}`,
+      location: `${item.city}`,
       petType: item.petType,
       petAge: `${item.petAge} years`,
       petWeight: `${item.petWeight} kg`,
