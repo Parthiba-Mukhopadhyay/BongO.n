@@ -65,8 +65,8 @@ const Rescuecenter: React.FC = () => {
   }, [rescueCenters, searchTerm, sortOption]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="w-full">
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6 bg-opacity-50">
           <h1 className="text-3xl font-bold text-red-600">Welcome to the Rescue Centers Directory</h1>
           <p className="mt-2 text-gray-500">
@@ -75,7 +75,7 @@ const Rescuecenter: React.FC = () => {
         </section>
 
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-row md:flex-row md:items-center md:justify-between">
             <input
               type="text"
               placeholder={`Search by ${sortOption === 'city' ? 'city' : 'name'}...`}

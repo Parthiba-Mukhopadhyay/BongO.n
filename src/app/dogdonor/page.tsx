@@ -1,6 +1,8 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import Link from 'next/link';
+import { Certificate } from 'crypto';
 
 interface Donor {
   name: string;
@@ -14,6 +16,7 @@ interface Donor {
   petBloodType: string;
   mail: string;
   phone: string;
+  Certificate: string;
 }
 
 // Function to fetch donors from the API
@@ -32,6 +35,7 @@ const fetchDonors = async (): Promise<Donor[]> => {
       petBloodType: item.petBloodType, // Assuming you need to handle petBloodType separately or add it to your API
       mail: item.email,
       phone: item.phoneNumber,
+      certificate: item.certificateLink,
     }));
   } catch (error) {
     console.error('Error fetching donor data:', error);
@@ -79,14 +83,14 @@ const DogDonor: React.FC = () => {
   }, [donors, searchTerm, sortOption]);
 
   return (
-    <div className="min-h-screen bg-gray-900 text-white p-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gray-900 text-white">
+      <div className="w-full">
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6 bg-opacity-50">
           <h1 className="text-3xl font-bold text-red-600">Welcome to the Animal Blood Donor Directory</h1>
         </section>
 
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6">
-          <div className="flex flex-col md:flex-row md:items-center md:justify-between">
+          <div className="flex flex-row md:flex-row md:items-center md:justify-between">
             <input
               type="text"
               placeholder={`Search by ${sortOption === 'location' ? 'area' : sortOption === 'petBloodType' ? 'blood group' : 'name'}...`}
@@ -127,6 +131,7 @@ const DogDonor: React.FC = () => {
                 <th className="px-4 py-2 border">Pet Blood Type</th>
                 <th className="px-4 py-2 border">Mail</th>
                 <th className="px-4 py-2 border">Phone</th>
+                <th className="px-4 py-2 border">Certificate</th>
               </tr>
             </thead>
             <tbody>
@@ -143,6 +148,11 @@ const DogDonor: React.FC = () => {
                   <td className="px-4 py-2 border">{donor.petBloodType}</td>
                   <td className="px-4 py-2 border">{donor.mail}</td>
                   <td className="px-4 py-2 border">{donor.phone}</td>
+                  <td className="px-4 py-2 border text-green-500">
+                    <Link href={donor.certificate} target="_blank" rel="noreferrer">
+                      View Certificate
+                    </Link>
+                  </td>
                 </tr>
               ))}
             </tbody>
