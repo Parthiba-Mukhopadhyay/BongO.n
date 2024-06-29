@@ -210,9 +210,10 @@ Here are the steps to navigate through the PAWsitive application:
 <img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed" width="600" height="400" />
 
 2. **Login/Sign Up**: Authenticate users via Kinde for secure access.
+   <br/>
 <img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/721091c4-89a3-4a5c-a24a-9b5eb5e45c53" width="300" height="400" /> <img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/df6d5c0e-ac9a-4baf-ab2d-93d0e3595d4d" width="300" height="400" />
 
-3. **Dashboard**: The main interface with access to all features.
+4. **Dashboard**: The main interface with access to all features.
  - **Spotlight Section**: Highlight ongoing projects and campaigns.
  - **Call Support**: Access voice assistant support powered by Callchimp.AI.
 <img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/2ddb3b0e-2002-45f6-9648-b0f91956d4f2" width="600" height="400" />
