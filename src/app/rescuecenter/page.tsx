@@ -103,7 +103,7 @@ const Rescuecenter: React.FC = () => {
         <section className="text-gray-100 p-6 rounded-lg shadow-lg overflow-x-scroll no-scrollbar">
           <table className="w-full table-auto">
             <thead>
-              <tr>
+              <tr className='font-serif text-blue-300'>
                 <th className="px-4 py-2 border">Center Name</th>
                 <th className="px-4 py-2 border">City</th>
                 <th className="px-4 py-2 border">Operating Hours</th>

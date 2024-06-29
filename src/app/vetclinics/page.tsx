@@ -97,7 +97,7 @@ const Vetclinics: React.FC = () => {
         <section className=" text-gray-100 p-6 rounded-lg shadow-lg overflow-x-scroll no-scrollbar">
           <table className="w-full table-auto">
             <thead>
-              <tr>
+              <tr className='font-serif text-blue-300'>
                 <th className="px-4 py-2 border">Name</th>
                 <th className="px-4 py-2 border">Location</th>
                 <th className="px-4 py-2 border">Phone Number</th>
