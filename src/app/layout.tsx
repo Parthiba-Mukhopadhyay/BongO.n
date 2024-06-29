@@ -7,8 +7,11 @@ import Footer from "./components/Footer";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "JeevanSathi",
+  title: "PAW-sitive",
   description: "Created by BongO(N)",
+  icons: {
+    icon: '/favicon.ico',
+  },
 };
 
 export default function RootLayout({
