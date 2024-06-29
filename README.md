@@ -1,4 +1,3 @@
-![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/1bd14b6e-ae57-4fe3-8ce8-f224ec5f969c)
 ---
 
 # PAWsitive
