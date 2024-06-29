@@ -1,10 +1,12 @@
 'use client';
 import React, { useState,useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
 import CallRequest from "../components/CallRequest";
+import logo from "/public/callchimp.svg";
 
 interface CampData {
   campName: string;
@@ -110,19 +112,10 @@ const Dashboard: React.FC = () => {
             ))||<li>No Camps Found</li>}
           </ul>
         </div>
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Emergency Contact</h2>
-          <p className="text-gray-600">
-            Contact your local rescue center for immediate assistance.
-          </p>
-          <div className="mt-4 text-gray-600">
-            Other emergency contacts:
-            <ul className="list-disc list-inside">
-              <li>Rescue Center: 123-456-7890</li>
-              <li>Emergency Vet: 098-765-4321</li>
-              <li>Animal Control: 111-222-3333</li>
-            </ul>
-          </div>
+        <div className="bg-white p-6 shadow-lg rounded-lg grid place-items-center">
+          {logo && <Image src={logo} alt="Call Chimp Logo" className="w-10" />}
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">Call Chimp Assistant</h2>
+          <CallRequest />
         </div>
       </div>
 
