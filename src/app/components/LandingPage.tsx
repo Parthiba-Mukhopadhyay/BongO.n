@@ -1,7 +1,6 @@
-import Link from 'next/link';
 import Image from 'next/image';
-import img1 from '../assets/BloodDonation.jpeg';
-import img2 from '../assets/Doctor.jpeg';
+import img1 from '../assets/Owner.jpeg';
+import img2 from '../assets/Vaccination.jpeg';
 import { RegisterLink } from '@kinde-oss/kinde-auth-nextjs/server';
 
 export default function LandingPage() {
@@ -14,11 +13,11 @@ export default function LandingPage() {
                             <div className="flex flex-col justify-center space-y-4">
                                 <div className="space-y-2">
                                     <h1 className="text-3xl font-bold tracking-tighter sm:text-5xl xl:text-6xl">
-                                        Connect with Blood Donors, Save Lives
+                                        Connect with Dog Blood Donors, Save Lives
                                     </h1>
                                     <p className="max-w-[600px] text-gray-300 md:text-xl">
-                                        Jeevan Saathi is a platform that connects blood donors with blood banks in times of emergency. Find
-                                        compatible donors near you and get the blood you need.
+                                        PAW-sitive is a platform that connects dog blood donors with pet clinics and blood banks in times of emergency. Find
+                                        compatible donors near you and get the blood your dog needs.
                                     </p>
                                 </div>
                                 <div className="flex flex-col gap-2 min-[400px]:flex-row">
@@ -28,13 +27,13 @@ export default function LandingPage() {
                                 </div>
                             </div>
                             <div className="flex flex-col justify-center space-y-4">
-                            <Image
-                                src={img1}
-                                width="550"
-                                height="310"
-                                alt="Image"
-                                className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
-                            />
+                                <Image
+                                    src={img1}
+                                    width="550"
+                                    height="310"
+                                    alt="Dog Blood Donation"
+                                    className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full lg:order-last"
+                                />
                             </div>
                         </div>
                     </div>
@@ -44,9 +43,9 @@ export default function LandingPage() {
                         <div className="flex flex-col items-center justify-center space-y-4 text-center">
                             <div className="space-y-2">
                                 <div className="inline-block rounded-lg bg-gray-700 px-3 py-1 text-sm text-red-600">Key Features</div>
-                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Connecting Blood Donors and Banks</h2>
+                                <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">Connecting Dog Blood Donors and Banks</h2>
                                 <p className="max-w-[900px] text-gray-300 md:text-xl">
-                                    Jeevan Saathi provides a seamless platform for blood donors and blood banks to connect in times of
+                                    PAW-sitive provides a seamless platform for dog blood donors and pet clinics to connect in times of
                                     emergency. Our key features include real-time availability, location-based search, and secure data
                                     management.
                                 </p>
@@ -59,7 +58,7 @@ export default function LandingPage() {
                                         <div className="grid gap-1">
                                             <h3 className="text-xl font-bold">Find Donors</h3>
                                             <p className="text-gray-400">
-                                                Search for compatible blood donors near your location and connect with them in real-time.
+                                                Search for compatible dog blood donors near your location and connect with them in real-time.
                                             </p>
                                         </div>
                                     </li>
@@ -67,7 +66,7 @@ export default function LandingPage() {
                                         <div className="grid gap-1">
                                             <h3 className="text-xl font-bold">Find Blood Banks</h3>
                                             <p className="text-gray-400">
-                                                Locate the nearest blood banks and check their real-time availability of blood stocks.
+                                                Locate the nearest blood banks and check their real-time availability of dog blood stocks.
                                             </p>
                                         </div>
                                     </li>
@@ -75,7 +74,15 @@ export default function LandingPage() {
                                         <div className="grid gap-1">
                                             <h3 className="text-xl font-bold">Become a Donor</h3>
                                             <p className="text-gray-400">
-                                                Register as a blood donor and help save lives in emergencies.
+                                                Register your dog as a blood donor and help save lives in emergencies.
+                                            </p>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div className="grid gap-1">
+                                            <h3 className="text-xl font-bold">Locate Pet Clinics</h3>
+                                            <p className="text-gray-400">
+                                                Find nearby pet clinics offering emergency services and blood transfusions for dogs.
                                             </p>
                                         </div>
                                     </li>
@@ -86,7 +93,7 @@ export default function LandingPage() {
                                     src={img2}
                                     width="550"
                                     height="310"
-                                    alt="Image"
+                                    alt="Dog Blood Donation"
                                     className="mx-auto aspect-video overflow-hidden rounded-xl object-cover object-center sm:w-full"
                                 />
                             </div>
@@ -99,7 +106,7 @@ export default function LandingPage() {
                             <div className="inline-block rounded-lg bg-gray-700 px-3 py-1 text-sm text-red-600">Testimonials</div>
                             <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">What Our Users Say</h2>
                             <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                                Hear from the people who have used Jeevan Saathi to connect with blood donors and save lives.
+                                Hear from the people who have used PAW-sitive to connect with dog blood donors and save lives.
                             </p>
                         </div>
                         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
@@ -109,54 +116,54 @@ export default function LandingPage() {
                                         src={img1}
                                         width="48"
                                         height="48"
-                                        alt="Image"
+                                        alt="Dog Blood Donation"
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
                                         <p className="text-sm font-medium">John Doe</p>
-                                        <p className="text-sm text-gray-400">Blood Recipient</p>
+                                        <p className="text-sm text-gray-400">Pet Owner</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
-                                    &ldquo;Jeevan Saathi helped me find a compatible blood donor in my area during a medical emergency.
+                                    &ldquo;PAW-sitive helped me find a compatible blood donor for my dog during a medical emergency.
                                     The process was seamless and the donor was very responsive.&rdquo;
                                 </blockquote>
                             </div>
                             <div className="p-6 space-y-4 bg-gray-800 rounded-lg">
                                 <div className="flex items-center gap-4">
-                                <Image 
-                                        src={img1}
+                                    <Image 
+                                        src={img2}
                                         width="48"
                                         height="48"
-                                        alt="Image"
+                                        alt="Dog Blood Donation"
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
                                         <p className="text-sm font-medium">Jane Smith</p>
-                                        <p className="text-sm text-gray-400">Blood Donor</p>
+                                        <p className="text-sm text-gray-400">Dog Blood Donor Owner</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
-                                    &ldquo;I've been a regular blood donor for years, and Jeevan Saathi makes it easy for me to connect
-                                    with blood banks in need. The app is user-friendly and the process is straightforward.&rdquo;
+                                    &ldquo;I've been a regular blood donor for my dog, and PAW-sitive makes it easy for me to connect
+                                    with pet clinics in need. The app is user-friendly and the process is straightforward.&rdquo;
                                 </blockquote>
                             </div>
                             <div className="p-6 space-y-4 bg-gray-800 rounded-lg">
                                 <div className="flex items-center gap-4">
-                                <Image 
+                                    <Image 
                                         src={img1}
                                         width="48"
                                         height="48"
-                                        alt="Image"
+                                        alt="Dog Blood Donation"
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
                                         <p className="text-sm font-medium">Michael Johnson</p>
-                                        <p className="text-sm text-gray-400">Blood Bank Manager</p>
+                                        <p className="text-sm text-gray-400">Pet Clinic Manager</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
-                                    &ldquo;Jeevan Saathi has been a game-changer for our blood bank. We can now easily connect with donors
+                                    &ldquo;PAW-sitive has been a game-changer for our clinic. We can now easily connect with donors
                                     and manage our blood stocks more efficiently. The platform has helped us save more lives.&rdquo;
                                 </blockquote>
                             </div>
@@ -166,40 +173,38 @@ export default function LandingPage() {
                 <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-800 text-white">
                     <div className="container mx-auto grid items-center justify-center gap-4 px-4 text-center md:px-6 lg:gap-10">
                         <div className="space-y-3">
-                            <div className="inline-block rounded-lg bg-gray-700 px-3 py-1 text-sm">Data Security</div>
-                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Secure and Reliable</h2>
+                            <div className="inline-block rounded-lg bg-gray-700 px-3 py-1 text-sm text-red-600">Register Now</div>
+                            <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Join Our Cause and Save Lives</h2>
                             <p className="mx-auto max-w-[700px] text-gray-300 md:text-xl">
-                                At Jeevan Saathi, we take data security and privacy seriously. Your personal information is encrypted
-                                and stored securely, and we follow strict protocols to ensure the confidentiality of your data.
+                                Become a part of our community and contribute to saving the lives of dogs. Whether you're a pet owner,
+                                a potential donor, or a clinic, your participation can make a significant difference.
                             </p>
                         </div>
                         <div className="grid w-full grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
                             <div className="p-6 space-y-4 bg-gray-900 rounded-lg">
                                 <DropletsIcon className="h-12 w-12" />
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold">Secure Encryption</h3>
+                                    <h3 className="text-xl font-bold">Register as a Donor</h3>
                                     <p className="text-gray-400">
-                                        We use advanced encryption protocols to protect your personal information and ensure data security.
+                                        Sign up to become a dog blood donor and help save lives in emergencies.
                                     </p>
                                 </div>
                             </div>
                             <div className="p-6 space-y-4 bg-gray-900 rounded-lg">
                                 <DropletsIcon className="h-12 w-12" />
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold">Data Privacy</h3>
+                                    <h3 className="text-xl font-bold">Register Your Clinic</h3>
                                     <p className="text-gray-400">
-                                        Your data is stored securely and is only accessible to authorized personnel. We follow strict
-                                        privacy protocols to ensure the confidentiality of your information.
+                                        Join our network of pet clinics and blood banks to provide critical services in times of need.
                                     </p>
                                 </div>
                             </div>
                             <div className="p-6 space-y-4 bg-gray-900 rounded-lg">
                                 <DropletsIcon className="h-12 w-12" />
                                 <div className="text-center">
-                                    <h3 className="text-xl font-bold">Reliable Platform</h3>
+                                    <h3 className="text-xl font-bold">Support the Cause</h3>
                                     <p className="text-gray-400">
-                                        Our platform is built to handle high volumes of traffic and ensure smooth and reliable performance
-                                        even during peak times.
+                                        Help us spread the word and support our mission to save the lives of dogs through blood donation.
                                     </p>
                                 </div>
                             </div>
@@ -227,4 +232,3 @@ const DropletsIcon = ({ className }: { className: string }) => (
         />
     </svg>
 );
-
