@@ -10,10 +10,14 @@ interface SubscriptionData {
   city: string;
   address: string;
   pinCode: string;
-  age: string;
-  bloodGroup: string;
-  medicalHistory: string;
   email: string;
+  phoneNumber: string;
+  petType: string;
+  petAge: string;
+  petWeight: string;
+  vaccinationStatus: string;
+  recentIllness: string;
+  medicalHistory6Months: string;
 }
 
 // Handler for POST requests
@@ -27,12 +31,17 @@ export async function POST(req: NextRequest) {
     city,
     address,
     pinCode,
-    age,
-    bloodGroup,
-    medicalHistory,
-    email
+    email,
+    phoneNumber,
+    petType,
+    petAge,
+    petWeight,
+    vaccinationStatus,
+    recentIllness,
+    medicalHistory6Months
   } = data;
 
+  // Validate required fields
   if (
     !firstName ||
     !lastName ||
@@ -40,11 +49,15 @@ export async function POST(req: NextRequest) {
     !city ||
     !address ||
     !pinCode ||
-    !age ||
-    !bloodGroup ||
-    !medicalHistory ||
     !email ||
-    !email.includes('@')
+    !email.includes('@') ||
+    !phoneNumber ||
+    !petType ||
+    !petAge ||
+    !petWeight ||
+    !vaccinationStatus ||
+    !recentIllness ||
+    !medicalHistory6Months
   ) {
     return NextResponse.json({ message: 'Invalid input. Please fill all the fields correctly.' }, { status: 422 });
   }
@@ -63,15 +76,19 @@ export async function POST(req: NextRequest) {
       city,
       address,
       pinCode,
-      age: parseInt(age, 10), // ensure age is stored as a number
-      bloodGroup,
-      medicalHistory,
-      email
+      email,
+      phoneNumber,
+      petType,
+      petAge: parseInt(petAge, 10), // ensure petAge is stored as a number
+      petWeight: parseFloat(petWeight), // ensure petWeight is stored as a number
+      vaccinationStatus,
+      recentIllness,
+      medicalHistory6Months
     });
 
     client.close();
 
-    return NextResponse.json({ message: 'Subscription stored successfully!' }, { status: 201 });
+    return NextResponse.json({ message: 'Stored successfully!' }, { status: 201 });
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     return NextResponse.json({ message: 'Storing subscription failed.' }, { status: 500 });
