@@ -15,7 +15,6 @@ export async function GET(req: NextRequest) {
 
     // Set headers to disable Vercel caching
     response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-    response.headers.set('x-vercel-cache', 'MISS');
 
     return response;
   } catch (error) {

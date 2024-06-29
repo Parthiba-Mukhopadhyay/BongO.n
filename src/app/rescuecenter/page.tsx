@@ -3,8 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { headers } from 'next/headers';
 
-export const dynamic = "force-dynamic";
-
 interface RescueCenter {
   centerName: string;
   city: string;
@@ -17,11 +15,7 @@ interface RescueCenter {
 // Function to fetch rescue centers from the API
 const fetchRescueCenters = async (): Promise<RescueCenter[]> => {
   try {
-    const response = await axios.get('/api/rescuecenters',{
-      headers: {
-        'Cache-Control': 'no-cache',
-      },
-    });
+    const response = await axios.get('/api/rescuecenters');
     return response.data.map((item: any) => ({
       centerName: item.centerName,
       city: item.city,
@@ -137,5 +131,5 @@ const Rescuecenter: React.FC = () => {
     </div>
   );
 };
-
+export const dynamic = "force-dynamic";
 export default Rescuecenter;
