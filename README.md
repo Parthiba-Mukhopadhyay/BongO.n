@@ -235,7 +235,7 @@ Here are the steps to navigate through the PAWsitive application:
 
 
 4. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
-<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290" width="600" height="400" />
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290" width="400" height="600" />
 
 
 ## Detailed Working of the Project
