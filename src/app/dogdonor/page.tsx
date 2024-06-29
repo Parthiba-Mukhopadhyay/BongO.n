@@ -4,6 +4,8 @@ import axios from 'axios';
 import Link from 'next/link';
 import { Certificate } from 'crypto';
 
+export const dynamic = "force-dynamic";
+
 interface Donor {
   name: string;
   location: string;
