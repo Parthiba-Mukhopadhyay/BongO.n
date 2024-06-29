@@ -12,9 +12,10 @@ export async function GET(req: NextRequest) {
     const donors = await collection.find({}).toArray();
 
     const response = NextResponse.json(donors, { status: 200 });
-    
-    // Set cache-control headers to ensure fresh data is fetched
+
+    // Set headers to disable Vercel caching
     response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+    response.headers.set('x-vercel-cache', 'MISS');
 
     return response;
   } catch (error) {
