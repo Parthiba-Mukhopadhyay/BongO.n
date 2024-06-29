@@ -33,27 +33,31 @@ const Dashboard: React.FC = () => {
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-6">
         {/* Look for Blood Donors Section */}
         <Link href="../blooddonor">
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Blood Donors</h2>
-          <p className="text-gray-600">Find blood donors in your area.</p>
-        </div>
+          <div className="bg-white p-6 shadow-lg rounded-lg">
+            <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Blood Donors</h2>
+            <p className="text-gray-600">Find blood donors in your area.</p>
+          </div>
         </Link>
 
         {/* Look for Blood Camps Section */}
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Blood Camps</h2>
-          <p className="text-gray-600">Find upcoming blood donation camps.</p>
-        </div>
+        <Link href="../bloodbank">
+          <div className="bg-white p-6 shadow-lg rounded-lg">
+            <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Blood Camps</h2>
+            <p className="text-gray-600">Find upcoming blood donation camps.</p>
+          </div>
+        </Link>
 
         {/* Look for Ambulance and Oxygen Services Section */}
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">
-            Look for Ambulance & Oxygen Services
-          </h2>
-          <p className="text-gray-600">
-            Find ambulance and oxygen services near you.
-          </p>
-        </div>
+        <Link href="../ambulance">
+          <div className="bg-white p-6 shadow-lg rounded-lg">
+            <h2 className="text-2xl font-bold text-red-600 mb-4">
+              Look for Ambulance & Oxygen
+            </h2>
+            <p className="text-gray-600">
+              Find ambulance and oxygen services near you.
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* Collaborate with Us Section */}
