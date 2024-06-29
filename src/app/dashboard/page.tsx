@@ -1,11 +1,13 @@
 'use client';
 import React, { useState,useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
 import CallRequest from "../components/CallRequest";
 import RescueCenterRegistrationForm from "../components/RescueCentreRegister";
+import logo from "/public/callchimp.svg";
 
 interface CampData {
   campName: string;
@@ -111,40 +113,31 @@ const Dashboard: React.FC = () => {
             ))||<li>No Camps Found</li>}
           </ul>
         </div>
-        <div className="bg-white p-6 shadow-lg rounded-lg">
-          <h2 className="text-2xl font-bold text-red-600 mb-4">Emergency Contact</h2>
-          <p className="text-gray-600">
-            Contact your local rescue center for immediate assistance.
-          </p>
-          <div className="mt-4 text-gray-600">
-            Other emergency contacts:
-            <ul className="list-disc list-inside">
-              <li>Rescue Center: 123-456-7890</li>
-              <li>Emergency Vet: 098-765-4321</li>
-              <li>Animal Control: 111-222-3333</li>
-            </ul>
-          </div>
+        <div className="bg-white p-6 shadow-lg rounded-lg grid place-items-center">
+          {logo && <Image src={logo} alt="Call Chimp Logo" className="w-10" />}
+          <h2 className="text-2xl font-bold text-blue-600 mb-4">Call Chimp Assistant</h2>
+          <CallRequest />
         </div>
       </div>
 
       {/* Services Section */}
       <div className="mt-6">
         <h2 className="text-2xl font-bold text-red-600 mb-4">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-10">
           <Link href="../dogdonor">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Dog blood donors</h2>
               <p className="text-gray-600">Look for Dogs Who Can Donate Blood</p>
             </div>
           </Link>
           <Link href="../vetclinics">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Veterinary Clinics</h2>
               <p className="text-gray-600">Find veterinary clinics that support blood donation.</p>
             </div>
           </Link>
           <Link href="../rescuecenter">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Rescue Centers</h2>
               <p className="text-gray-600">Find rescue centers near you.</p>
             </div>

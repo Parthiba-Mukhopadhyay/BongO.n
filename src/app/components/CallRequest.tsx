@@ -34,7 +34,7 @@ const CallRequest: React.FC = () => {
                     name: userName,
                     phone: phoneNumber,
                     priority: 1,
-                    organization: 126
+                    organization: 1
                 },
                 {
                     headers: {
@@ -118,11 +118,10 @@ const CallRequest: React.FC = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100 p-6">
-            <div className="bg-white p-8 rounded shadow-md w-full max-w-md">
+            <div className="bg-white rounded w-full max-w-md grid place-items-center">
                 {!otpSent ? (
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Enter Your Details</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-black">Enter Your Details: </h2>
                         <input
                             type="text"
                             value={userName}
@@ -146,7 +145,7 @@ const CallRequest: React.FC = () => {
                     </div>
                 ) : !otpVerified ? (
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Enter OTP</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-black">Enter OTP</h2>
                         <input
                             type="text"
                             value={otp}
@@ -163,11 +162,11 @@ const CallRequest: React.FC = () => {
                     </div>
                 ) : (
                     <div>
-                        <h2 className="text-2xl font-bold mb-4">Select a Subscriber</h2>
+                        <h2 className="text-2xl font-bold mb-4 text-black">Select a Subscriber</h2>
                         <ul className="mb-4">
                             {subscribers.map(subscriber => (
-                                <li key={subscriber.id} className="flex justify-between items-center border-b py-2">
-                                    <span>{subscriber.first_name} {subscriber.last_name}</span>
+                                <li key={subscriber.id} className="flex justify-between items-center border-b py-2 text-black">
+                                    <span className='text-black'>{subscriber.first_name} {subscriber.last_name}</span>
                                     <button 
                                         onClick={() => createCall(subscriber.id)}
                                         className="bg-green-500 text-black py-1 px-2 rounded hover:bg-green-600"
@@ -181,7 +180,6 @@ const CallRequest: React.FC = () => {
                     </div>
                 )}
             </div>
-        </div>
     );
 };
 
