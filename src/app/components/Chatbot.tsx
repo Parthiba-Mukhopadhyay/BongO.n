@@ -22,6 +22,11 @@ const Chatbot: React.FC = () => {
 
       try {
         setLoading(true);
+
+        const prompt = `
+        You are a ChatBot designed by PAW-sitive. You strictly answer only queries related to animals and their health. If a question is asked outside this scope, reply with Some Animal Puns in the context of the question given.
+        User query: ${input}`;
+
         const response = await axios.post(
           process.env.NEXT_PUBLIC_AI_KEY ?? "",
           {
@@ -29,7 +34,7 @@ const Chatbot: React.FC = () => {
               {
                 parts: [
                   {
-                    text: input,
+                    text: prompt,
                   },
                 ],
               },
@@ -77,9 +82,9 @@ const Chatbot: React.FC = () => {
         {isChatbotVisible ? <IoClose className="w-6 h-6" /> : <RiMessage3Fill className="w-6 h-6" />}
       </button>
       {isChatbotVisible && (
-        <div className="bg-white w-80 h-96 shadow-lg rounded-lg overflow-hidden mt-4 absolute bottom-16 right-12">
+        <div className="bg-white w-80 h-3/4 shadow-lg rounded-lg overflow-hidden mt-4 absolute bottom-16 right-12">
           <div className="bg-gradient-to-r from-red-500 to-red-600 p-4">
-            <h1 className="text-white text-lg font-bold text-center">Welcome to Jeevansathi</h1>
+            <h1 className="text-white text-lg font-bold text-center">Welcome to PAW-sitive</h1>
           </div>
           <div className="p-4 h-64 overflow-y-auto">
             {messages.map((msg, index) => (
@@ -89,7 +94,7 @@ const Chatbot: React.FC = () => {
               >
                 <div
                   className={`rounded-lg p-2 shadow-md max-w-xs ${
-                    msg.user ? "bg-red-300 text-black" : "bg-red-500 text-white"
+                    msg.user ? "bg-red-200 text-black" : "bg-red-400 text-white"
                   }`}
                 >
                   <ReactMarkdown>{msg.text}</ReactMarkdown>
@@ -108,7 +113,7 @@ const Chatbot: React.FC = () => {
             )}
             <div ref={chatEndRef} />
           </div>
-          <div className="p-4 border-t border-gray-200 flex items-center">
+          <div className="p-2 border-t border-gray-200 flex items-center absolute bottom-1 w-full">
             <input
               type="text"
               placeholder="Type your message..."
