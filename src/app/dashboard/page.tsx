@@ -2,16 +2,38 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import UserRegistrationForm from "../components/UserRegistrationForm";
+import CampRegister from  "../components/CampRegister"
+import VetRegister from  "../components/VetRegister"
 
 const Dashboard: React.FC = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
+  const [isModalDonorOpen, setModalDonorOpen] = useState(false);
 
-  const openModal = () => {
-    setModalOpen(true);
+  const openModalDonor = () => {
+    setModalDonorOpen(true);
   };
 
-  const closeModal = () => {
-    setModalOpen(false);
+  const closeModalDonor = () => {
+    setModalDonorOpen(false);
+  };
+
+  const [isModalClinicOpen, setModalClinicOpen] = useState(false);
+
+  const openModalClinic = () => {
+    setModalClinicOpen(true);
+  };
+
+  const closeModalClinic = () => {
+    setModalClinicOpen(false);
+  };
+
+  const [isModalMedicalOpen, setModalMedicalOpen] = useState(false);
+
+  const openModalMedical = () => {
+    setModalMedicalOpen(true);
+  };
+
+  const closeModalMedical = () => {
+    setModalMedicalOpen(false);
   };
 
   return (
@@ -72,18 +94,18 @@ const Dashboard: React.FC = () => {
           Join us in making a difference. Register for any of the following:
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-4">
-          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={openModal}>
+          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={openModalDonor}>
             <h3 className="text-xl font-bold text-red-600 mb-4">Register as a Donor</h3>
             <p className="text-gray-600">Register your dog as a blood donor and help save lives.</p>
           </div>
-          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors">
+          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={openModalClinic}>
             <h3 className="text-xl font-bold text-red-600 mb-4">Register Veterinary Clinic</h3>
             <p className="text-gray-600">
               Register your veterinary clinic to collaborate with us.
             </p>
             {/* Add registration form or link here */}
           </div>
-          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors">
+          <div className="bg-white p-6 shadow-lg rounded-lg hover:bg-gray-100 transition-colors cursor-pointer" onClick={openModalMedical}>
             <h3 className="text-xl font-bold text-red-600 mb-4">Register for Camps and Medical Drives</h3>
             <p className="text-gray-600">
               Organize or participate in blood donation camps and medical drives for pets.
@@ -94,16 +116,46 @@ const Dashboard: React.FC = () => {
       </div>
 
       {/* Modal for ExtendedEmailSubscriptionForm */}
-      {isModalOpen && (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4">
+      {isModalDonorOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative">
             <button
               className="absolute top-2 right-2 text-gray-600"
-              onClick={closeModal}
+              onClick={closeModalDonor}
             >
               &times;
             </button>
             <UserRegistrationForm />
+          </div>
+        </div>
+      )}
+
+      {/* Modal for ExtendedEmailSubscriptionForm */}
+      {isModalClinicOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+            <button
+              className="absolute top-2 right-2 text-gray-600"
+              onClick={closeModalClinic}
+            >
+              &times;
+            </button>
+            <VetRegister />
+          </div>
+        </div>
+      )}
+
+      {/* Modal for ExtendedEmailSubscriptionForm */}
+      {isModalMedicalOpen && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full relative">
+            <button
+              className="absolute top-2 right-2 text-gray-600"
+              onClick={closeModalMedical}
+            >
+              &times;
+            </button>
+            <CampRegister />
           </div>
         </div>
       )}
