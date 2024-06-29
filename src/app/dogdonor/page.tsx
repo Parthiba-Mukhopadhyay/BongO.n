@@ -22,7 +22,11 @@ interface Donor {
 // Function to fetch donors from the API
 const fetchDonors = async (): Promise<Donor[]> => {
   try {
-    const response = await axios.get('/api/donors'); // Adjust the URL as necessary
+    const response = await axios.get('/api/donors',{
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
     return response.data.map((item: any) => ({
       name: `${item.firstName} ${item.lastName}`,
       location: `${item.city}`,

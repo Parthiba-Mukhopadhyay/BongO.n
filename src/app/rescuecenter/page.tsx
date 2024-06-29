@@ -1,6 +1,7 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { headers } from 'next/headers';
 
 interface RescueCenter {
   centerName: string;
@@ -14,7 +15,11 @@ interface RescueCenter {
 // Function to fetch rescue centers from the API
 const fetchRescueCenters = async (): Promise<RescueCenter[]> => {
   try {
-    const response = await axios.get('/api/rescuecenters'); // Adjust the URL as necessary
+    const response = await axios.get('/api/rescuecenters',{
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
     return response.data.map((item: any) => ({
       centerName: item.centerName,
       city: item.city,
