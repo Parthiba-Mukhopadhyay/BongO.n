@@ -34,7 +34,7 @@ const CallRequest: React.FC = () => {
                     name: userName,
                     phone: phoneNumber,
                     priority: 1,
-                    organization: 126
+                    organization: 1
                 },
                 {
                     headers: {
