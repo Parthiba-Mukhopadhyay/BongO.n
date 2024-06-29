@@ -1,68 +1,62 @@
 'use client';
 import React, { useState, useEffect } from 'react';
 
-interface AmbulanceService {
-  name: string;
-  area: string;
-  ambulanceAvailable: boolean;
-  oxygenAvailable: boolean;
+interface RescueCenter {
+  centerName: string;
+  city: string;
+  operatingHours: string;
   contact: string;
+  email: string;
+  website: string;
 }
 
-const predefinedAmbulanceServices: AmbulanceService[] = [
-  { name: 'City Ambulance', area: 'New York', ambulanceAvailable: true, oxygenAvailable: true, contact: '123-456-7890' },
-  { name: 'Quick Response Ambulance', area: 'Los Angeles', ambulanceAvailable: false, oxygenAvailable: true, contact: '234-567-8901' },
-  { name: 'Metro Ambulance', area: 'Chicago', ambulanceAvailable: true, oxygenAvailable: false, contact: '345-678-9012' },
-  { name: 'Emergency Services', area: 'Houston', ambulanceAvailable: true, oxygenAvailable: true, contact: '456-789-0123' },
-  { name: 'Health First Ambulance', area: 'Phoenix', ambulanceAvailable: false, oxygenAvailable: false, contact: '567-890-1234' },
-  { name: 'Rapid Ambulance', area: 'Philadelphia', ambulanceAvailable: true, oxygenAvailable: true, contact: '678-901-2345' },
-  { name: 'LifeSaver Ambulance', area: 'San Antonio', ambulanceAvailable: true, oxygenAvailable: true, contact: '789-012-3456' },
-  { name: 'Unity Ambulance', area: 'San Diego', ambulanceAvailable: false, oxygenAvailable: true, contact: '890-123-4567' },
-  { name: 'Hope Ambulance', area: 'Dallas', ambulanceAvailable: true, oxygenAvailable: false, contact: '901-234-5678' },
-  { name: 'Trust Ambulance', area: 'San Jose', ambulanceAvailable: true, oxygenAvailable: true, contact: '012-345-6789' },
+const predefinedRescueCenters: RescueCenter[] = [
+  {
+    centerName: 'City Rescue Center',
+    city: 'New York',
+    operatingHours: '24/7',
+    contact: '123-456-7890',
+    email: 'cityrescue@example.com',
+    website: 'http://www.cityrescuecenter.com',
+  },
+  {
+    centerName: 'Quick Response Rescue',
+    city: 'Los Angeles',
+    operatingHours: '9 AM - 5 PM',
+    contact: '234-567-8901',
+    email: 'quickresponse@example.com',
+    website: 'http://www.quickrescue.com',
+  },
+  // Add more predefined rescue centers as needed
 ];
 
 const Rescuecenter: React.FC = () => {
-  const [ambulanceServices, setAmbulanceServices] = useState<AmbulanceService[]>(predefinedAmbulanceServices);
+  const [rescueCenters, setRescueCenters] = useState<RescueCenter[]>(predefinedRescueCenters);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
-  const [filteredAmbulanceServices, setFilteredAmbulanceServices] = useState<AmbulanceService[]>(predefinedAmbulanceServices);
-
-  // useEffect(() => {
-  //   // Fetch ambulance service data from the database
-  //   const fetchData = async () => {
-  //     try {
-  //       const response = await axios.get('/api/ambulances'); // Replace with your API endpoint
-  //       setAmbulanceServices(response.data);
-  //     } catch (error) {
-  //       console.error('Error fetching ambulance service data:', error);
-  //     }
-  //   };
-
-  //   fetchData();
-  // }, []);
+  const [filteredRescueCenters, setFilteredRescueCenters] = useState<RescueCenter[]>(predefinedRescueCenters);
 
   useEffect(() => {
-    let sortedAmbulanceServices = [...ambulanceServices];
+    let sortedRescueCenters = [...rescueCenters];
 
-    if (sortOption === 'area') {
-      sortedAmbulanceServices.sort((a, b) => a.area.localeCompare(b.area));
+    if (sortOption === 'city') {
+      sortedRescueCenters.sort((a, b) => a.city.localeCompare(b.city));
     }
 
-    setFilteredAmbulanceServices(
-      sortedAmbulanceServices.filter(service =>
-        service.name.toLowerCase().includes(searchTerm.toLowerCase())
+    setFilteredRescueCenters(
+      sortedRescueCenters.filter(center =>
+        center.centerName.toLowerCase().includes(searchTerm.toLowerCase())
       )
     );
-  }, [ambulanceServices, searchTerm, sortOption]);
+  }, [rescueCenters, searchTerm, sortOption]);
 
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
       <div className="max-w-4xl mx-auto">
         <section className=" text-gray-900 p-6 rounded-lg shadow-lg mb-6">
-          <h1 className="text-3xl font-bold text-red-600">Welcome to the Ambulance Services Directory</h1>
+          <h1 className="text-3xl font-bold text-red-600">Welcome to the Rescue Centers Directory</h1>
           <p className="mt-2 text-gray-500">
-            Find the nearest ambulance services and check their availability.
+            Find the nearest rescue centers and check their information.
           </p>
         </section>
 
@@ -81,10 +75,10 @@ const Rescuecenter: React.FC = () => {
               className="border border-gray-300 rounded-md px-3 py-2 mb-4 md:mb-0 md:mr-4"
             >
               <option value="">Sort by...</option>
-              <option value="area">Area</option>
+              <option value="city">City</option>
             </select>
             <button
-              onClick={() => setFilteredAmbulanceServices(filteredAmbulanceServices)}
+              onClick={() => setFilteredRescueCenters(filteredRescueCenters)}
               className="bg-red-500 hover:bg-red-600 text-white rounded-md px-4 py-2"
             >
               Search
@@ -96,25 +90,23 @@ const Rescuecenter: React.FC = () => {
           <table className="w-full table-auto">
             <thead>
               <tr>
-                <th className="px-4 py-2 border">Name</th>
-                <th className="px-4 py-2 border">Area</th>
-                <th className="px-4 py-2 border">Ambulance Available</th>
-                <th className="px-4 py-2 border">Oxygen Available</th>
+                <th className="px-4 py-2 border">Center Name</th>
+                <th className="px-4 py-2 border">City</th>
+                <th className="px-4 py-2 border">Operating Hours</th>
                 <th className="px-4 py-2 border">Contact</th>
+                <th className="px-4 py-2 border">Email</th>
+                <th className="px-4 py-2 border">Website</th>
               </tr>
             </thead>
             <tbody>
-              {filteredAmbulanceServices.slice(0, 10).map((service, index) => (
+              {filteredRescueCenters.slice(0, 10).map((center, index) => (
                 <tr key={index}>
-                  <td className="px-4 py-2 border">{service.name}</td>
-                  <td className="px-4 py-2 border">{service.area}</td>
-                  <td className="px-4 py-2 border">
-                    {service.ambulanceAvailable ? 'Available' : 'Not Available'}
-                  </td>
-                  <td className="px-4 py-2 border">
-                    {service.oxygenAvailable ? 'Available' : 'Not Available'}
-                  </td>
-                  <td className="px-4 py-2 border">{service.contact}</td>
+                  <td className="px-4 py-2 border">{center.centerName}</td>
+                  <td className="px-4 py-2 border">{center.city}</td>
+                  <td className="px-4 py-2 border">{center.operatingHours}</td>
+                  <td className="px-4 py-2 border">{center.contact}</td>
+                  <td className="px-4 py-2 border">{center.email}</td>
+                  <td className="px-4 py-2 border">{center.website}</td>
                 </tr>
               ))}
             </tbody>

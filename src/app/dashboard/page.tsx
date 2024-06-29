@@ -5,6 +5,7 @@ import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
 import CallRequest from "../components/CallRequest";
+import RescueCenterRegistrationForm from "../components/RescueCentreRegister";
 
 interface CampData {
   campName: string;
@@ -241,7 +242,7 @@ const Dashboard: React.FC = () => {
             >
               &times;
             </button>
-            <CampRegister />
+            <RescueCenterRegistrationForm />
           </div>
         </div>
       )}

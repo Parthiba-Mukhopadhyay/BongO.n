@@ -122,8 +122,8 @@ export default function ExtendedEmailSubscriptionForm() {
             onChange={handleChange}
             required
           >
-            <option value="Never Vaccinated">Never Vaccinated</option>
-            <option value="Vaccinated in last 6 months">Vaccinated in last 6 months</option>
+            <option value="Not Vaccinated">Never Vaccinated</option>
+            <option value="Vaccinated">Vaccinated in last 6 months</option>
           </select>
         </div>
 
@@ -139,8 +139,8 @@ export default function ExtendedEmailSubscriptionForm() {
             onChange={handleChange}
             required
           >
-            <option value="Affected with Serious Illness">Affected</option>
-            <option value="Not affected with serious illness">Not affected</option>
+            <option value="Affected">Affected with Serious Illness</option>
+            <option value="Not affected">Not affected with serious illness</option>
           </select>
         </div>
 
@@ -156,8 +156,8 @@ export default function ExtendedEmailSubscriptionForm() {
             onChange={handleChange}
             required
           >
-            <option value="Affected with Tick Fever and Fleas">Affected</option>
-            <option value="Not Affected with Tick Fever or Fleas">Not Affected</option>
+            <option value="Affected">Affected with Tick Fever and Fleas</option>
+            <option value="Not Affected">Not Affected with Tick Fever or Fleas</option>
           </select>
         </div>
 

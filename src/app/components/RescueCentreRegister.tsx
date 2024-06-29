@@ -76,7 +76,7 @@ export default function RescueCenterRegistrationForm() {
 
   return (
     <div className="max-w-md mx-auto mt-10">
-      <form onSubmit={registerHandler} className="shadow-md rounded px-8 py-6">
+      <form onSubmit={registerHandler} className="shadow-md rounded px-8 py-6 overflow-y-scroll h-[500px]">
         {/* Form Fields */}
         {['centerName', 'address', 'city', 'state', 'zipCode', 'contactNumber', 'email', 'website', 'servicesOffered', 'operatingHours'].map((field) => (
           <div className="mb-4" key={field}>
