@@ -1,3 +1,4 @@
+
 ---
 
 # PAWsitive
@@ -171,6 +172,7 @@ To create a custom chatbot for solving animal-related user queries.
      // Handle chatbot response
    });
    ```
+
 ## How to Start and Run the Project
 
 Follow these steps to start and run the PAWsitive project locally:
@@ -198,10 +200,35 @@ Follow these steps to start and run the PAWsitive project locally:
 5. **Open your browser**:
    Navigate to `http://localhost:3000` to see the application running.
 
+## Walkthrough of the Project
+
+Here are the steps to navigate through the PAWsitive application:
+
+1. **Landing Page**: The homepage of the PAWsitive application.
+2. **Login/Sign Up**: Authenticate users via Kinde for secure access.
+3. **Dashboard**: The main interface with access to all features.
+4. **Spotlight Section**: Highlight ongoing projects and campaigns.
+5. **Call Support**: Access voice assistant support powered by Callchimp.AI.
+6. **Services**:
+   - **View Donors**: Search and filter through blood donors.
+   - **View Veterinary Clinics**: Locate nearby veterinary clinics.
+   - **View Rescue Centers**: Find rescue centers and ambulance services.
+7. **Collaborations**:
+   - **Register as Donor**: Sign up as a blood donor.
+   - **Register as Vet Clinic**: Register a veterinary clinic.
+   - **Register as Rescue Center**: Enroll a rescue center.
+   - **Register Events and Campaigns**: Organize events and campaigns.
+8. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
+
+## Detailed Working of the Project
+
+For a comprehensive understanding of how the PAWsitive project works, you can watch this detailed video walkthrough:
+
+[Watch the Detailed Video Walkthrough](https://your-video-link-here)
+
 ## Team
 - **Parthiba Mukhopadhyay**: Full Stack Developer
 - **Mainak Chattopadhyay**: Full Stack Developer
 - **Aritro Saha**: Full Stack Developer
 
 ---
-
