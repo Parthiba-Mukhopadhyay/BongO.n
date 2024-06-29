@@ -19,6 +19,7 @@ interface SubscriptionData {
   recentIllness: string;
   medicalHistory6Months: string;
   petBloodType: string; // Added field for Pet Blood Type
+  certificateLink: string; // Added field for Certificate Link
 }
 
 // Handler for POST requests
@@ -40,7 +41,8 @@ export async function POST(req: NextRequest) {
     vaccinationStatus,
     recentIllness,
     medicalHistory6Months,
-    petBloodType // Extract petBloodType from the request data
+    petBloodType, // Extract petBloodType from the request data
+    certificateLink // Extract certificateLink from the request data
   } = data;
 
   // Validate required fields
@@ -60,7 +62,8 @@ export async function POST(req: NextRequest) {
     !vaccinationStatus ||
     !recentIllness ||
     !medicalHistory6Months ||
-    !petBloodType // Ensure petBloodType is also validated
+    !petBloodType || // Ensure petBloodType is also validated
+    !certificateLink // Ensure certificateLink is also validated
   ) {
     return NextResponse.json({ message: 'Invalid input. Please fill all the fields correctly.' }, { status: 422 });
   }
@@ -87,7 +90,8 @@ export async function POST(req: NextRequest) {
       vaccinationStatus,
       recentIllness,
       medicalHistory6Months,
-      petBloodType // Store petBloodType in the database
+      petBloodType, // Store petBloodType in the database
+      certificateLink // Store certificateLink in the database
     });
 
     client.close();
