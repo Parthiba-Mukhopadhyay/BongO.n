@@ -16,6 +16,7 @@ interface SubscriptionData {
   vaccinationStatus: string;
   recentIllness: string;
   medicalHistory6Months: string;
+  petBloodType: string; // Added field for Pet Blood Type
 }
 
 export default function ExtendedEmailSubscriptionForm() {
@@ -34,6 +35,7 @@ export default function ExtendedEmailSubscriptionForm() {
     vaccinationStatus: 'Never Vaccinated',
     recentIllness: 'Not affected with serious illness',
     medicalHistory6Months: 'Not Affected with Tick Fever or Fleas',
+    petBloodType: '', // Initialized field for Pet Blood Type
   });
   const [message, setMessage] = useState<string>('');
   const [success, setSuccess] = useState<boolean>(false);
@@ -75,6 +77,7 @@ export default function ExtendedEmailSubscriptionForm() {
           vaccinationStatus: 'Never Vaccinated',
           recentIllness: 'Not affected with serious illness',
           medicalHistory6Months: 'Not Affected with Tick Fever or Fleas',
+          petBloodType: '', // Reset field for Pet Blood Type
         });
       } else {
         setMessage(data.message);
@@ -90,7 +93,7 @@ export default function ExtendedEmailSubscriptionForm() {
     <div className="max-w-md mx-auto mt-10">
       <form onSubmit={subscribeHandler} className="bg-white rounded px-8 py-6 overflow-y-scroll h-[500px]">
         {/* Form Fields */}
-        {['firstName', 'lastName', 'state', 'city', 'address', 'pinCode', 'email', 'phoneNumber', 'petType', 'petAge', 'petWeight'].map((field) => (
+        {['firstName', 'lastName', 'state', 'city', 'address', 'pinCode', 'email', 'phoneNumber', 'petType', 'petAge', 'petWeight', 'petBloodType'].map((field) => (
           <div className="mb-4" key={field}>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={field}>
               {field.charAt(0).toUpperCase() + field.slice(1).replace(/([A-Z])/g, ' $1')}

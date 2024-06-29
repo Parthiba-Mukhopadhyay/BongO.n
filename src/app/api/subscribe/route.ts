@@ -18,6 +18,7 @@ interface SubscriptionData {
   vaccinationStatus: string;
   recentIllness: string;
   medicalHistory6Months: string;
+  petBloodType: string; // Added field for Pet Blood Type
 }
 
 // Handler for POST requests
@@ -38,7 +39,8 @@ export async function POST(req: NextRequest) {
     petWeight,
     vaccinationStatus,
     recentIllness,
-    medicalHistory6Months
+    medicalHistory6Months,
+    petBloodType // Extract petBloodType from the request data
   } = data;
 
   // Validate required fields
@@ -57,7 +59,8 @@ export async function POST(req: NextRequest) {
     !petWeight ||
     !vaccinationStatus ||
     !recentIllness ||
-    !medicalHistory6Months
+    !medicalHistory6Months ||
+    !petBloodType // Ensure petBloodType is also validated
   ) {
     return NextResponse.json({ message: 'Invalid input. Please fill all the fields correctly.' }, { status: 422 });
   }
@@ -83,7 +86,8 @@ export async function POST(req: NextRequest) {
       petWeight: parseFloat(petWeight), // ensure petWeight is stored as a number
       vaccinationStatus,
       recentIllness,
-      medicalHistory6Months
+      medicalHistory6Months,
+      petBloodType // Store petBloodType in the database
     });
 
     client.close();
