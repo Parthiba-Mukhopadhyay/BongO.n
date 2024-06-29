@@ -1,5 +1,3 @@
-Certainly! Here's how you can add the section for starting and running the project in your README file:
-
 ---
 
 # PAWsitive
@@ -207,33 +205,3 @@ Follow these steps to start and run the PAWsitive project locally:
 
 ---
 
-## How to Start and Run the Project
-
-Follow these steps to start and run the PAWsitive project locally:
-
-1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/Parthiba-Mukhopadhyay/BongO.n
-   ```
-
-2. **Navigate into the project directory**:
-   ```bash
-   cd BongO.n
-   ```
-
-3. **Install dependencies**:
-   ```bash
-   npm install
-   ```
-
-4. **Run the development server**:
-   ```bash
-   npm run dev
-   ```
-
-5. **Open your browser**:
-   Navigate to `http://localhost:3000` to see the application running.
-
----
-
-Feel free to adjust any details or formatting as per your project's specific setup!
