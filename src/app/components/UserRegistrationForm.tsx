@@ -1,5 +1,6 @@
 'use client'
 import { useState, ChangeEvent, FormEvent } from 'react';
+import { UploadButton } from "../../utils/uploadthing";
 
 interface SubscriptionData {
   firstName: string;
@@ -16,7 +17,8 @@ interface SubscriptionData {
   vaccinationStatus: string;
   recentIllness: string;
   medicalHistory6Months: string;
-  petBloodType: string; // Added field for Pet Blood Type
+  petBloodType: string;
+  certificateLink: string; // New field for the certificate link
 }
 
 export default function ExtendedEmailSubscriptionForm() {
@@ -35,7 +37,8 @@ export default function ExtendedEmailSubscriptionForm() {
     vaccinationStatus: 'Never Vaccinated',
     recentIllness: 'Not affected with serious illness',
     medicalHistory6Months: 'Not Affected with Tick Fever or Fleas',
-    petBloodType: '', // Initialized field for Pet Blood Type
+    petBloodType: '',
+    certificateLink: '', // Initialized field for the certificate link
   });
   const [message, setMessage] = useState<string>('');
   const [success, setSuccess] = useState<boolean>(false);
@@ -77,7 +80,8 @@ export default function ExtendedEmailSubscriptionForm() {
           vaccinationStatus: 'Never Vaccinated',
           recentIllness: 'Not affected with serious illness',
           medicalHistory6Months: 'Not Affected with Tick Fever or Fleas',
-          petBloodType: '', // Reset field for Pet Blood Type
+          petBloodType: '',
+          certificateLink: '', // Reset field for the certificate link
         });
       } else {
         setMessage(data.message);
@@ -92,7 +96,6 @@ export default function ExtendedEmailSubscriptionForm() {
   return (
     <div className="max-w-md mx-auto mt-10">
       <form onSubmit={subscribeHandler} className="rounded px-8 py-6 overflow-y-scroll h-[500px]">
-        {/* Form Fields */}
         {['firstName', 'lastName', 'state', 'city', 'address', 'pinCode', 'email', 'phoneNumber', 'petType', 'petAge', 'petWeight', 'petBloodType'].map((field) => (
           <div className="mb-4" key={field}>
             <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor={field}>
@@ -110,7 +113,6 @@ export default function ExtendedEmailSubscriptionForm() {
           </div>
         ))}
 
-        {/* Vaccination Status Dropdown */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="vaccinationStatus">
             Vaccination Status
@@ -127,7 +129,6 @@ export default function ExtendedEmailSubscriptionForm() {
           </select>
         </div>
 
-        {/* Recent Illness Dropdown */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="recentIllness">
             Recent Illness
@@ -144,7 +145,6 @@ export default function ExtendedEmailSubscriptionForm() {
           </select>
         </div>
 
-        {/* Medical History in 6 Months Dropdown */}
         <div className="mb-4">
           <label className="block text-gray-700 text-sm font-bold mb-2" htmlFor="medicalHistory6Months">
             Medical History in Last 6 Months
@@ -161,6 +161,19 @@ export default function ExtendedEmailSubscriptionForm() {
           </select>
         </div>
 
+        <UploadButton
+          endpoint="imageUploader"
+          onClientUploadComplete={(res) => {
+            if (res.length > 0) {
+              const fileUrl = res[0].url;
+              setSubscriptionData((prevData) => ({ ...prevData, certificateLink: fileUrl }));
+              alert("Upload Completed");
+            }
+          }}
+          onUploadError={(error: Error) => {
+            alert(`ERROR! ${error.message}`);
+          }}
+        />
         <div className="flex justify-center">
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
