@@ -16,7 +16,7 @@ interface Donor {
   petBloodType: string;
   mail: string;
   phone: string;
-  Certificate: string;
+  certificate: string;
 }
 
 // Function to fetch donors from the API
