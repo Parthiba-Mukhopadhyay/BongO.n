@@ -122,21 +122,21 @@ const Dashboard: React.FC = () => {
       {/* Services Section */}
       <div className="mt-6">
         <h2 className="text-2xl font-bold text-red-600 mb-4">Services</h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-20 p-10">
           <Link href="../dogdonor">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Dog blood donors</h2>
               <p className="text-gray-600">Look for Dogs Who Can Donate Blood</p>
             </div>
           </Link>
           <Link href="../vetclinics">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Veterinary Clinics</h2>
               <p className="text-gray-600">Find veterinary clinics that support blood donation.</p>
             </div>
           </Link>
           <Link href="../rescuecenter">
-            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300">
+            <div className="bg-[#ededed] p-6 shadow-2xl shadow-slate-600 rounded-lg hover:shadow-xl hover:shadow-slate-600 hover:bg-white transition-all duration-300 h-[200px]">
               <h2 className="text-2xl font-bold text-red-600 mb-4">Look for Rescue Centers</h2>
               <p className="text-gray-600">Find rescue centers near you.</p>
             </div>
