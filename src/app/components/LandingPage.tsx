@@ -120,8 +120,8 @@ export default function LandingPage() {
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
-                                        <p className="text-sm font-medium">John Doe</p>
-                                        <p className="text-sm text-gray-400">Pet Owner</p>
+                                        <p className="text-sm font-medium text-left">Shivam Dube</p>
+                                        <p className="text-sm text-gray-400 text-left">Pet Owner</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
@@ -139,8 +139,8 @@ export default function LandingPage() {
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
-                                        <p className="text-sm font-medium">Jane Smith</p>
-                                        <p className="text-sm text-gray-400">Dog Blood Donor Owner</p>
+                                        <p className="text-sm font-medium text-left">Rinku Singh</p>
+                                        <p className="text-sm text-gray-400 text-left">Dog Blood Donor Owner</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
@@ -158,8 +158,8 @@ export default function LandingPage() {
                                         className="w-12 h-12 bg-gray-700 rounded-full"
                                     />
                                     <div>
-                                        <p className="text-sm font-medium">Michael Johnson</p>
-                                        <p className="text-sm text-gray-400">Pet Clinic Manager</p>
+                                        <p className="text-sm font-medium text-left">Md. Shami</p>
+                                        <p className="text-sm text-gray-400 text-left">Pet Clinic Manager</p>
                                     </div>
                                 </div>
                                 <blockquote className="text-lg font-semibold">
