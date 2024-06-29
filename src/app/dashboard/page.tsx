@@ -4,6 +4,7 @@ import Link from "next/link";
 import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
+import CallRequest from "../components/CallRequest";
 
 interface CampData {
   campName: string;

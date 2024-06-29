@@ -1,5 +1,6 @@
 'use client';
 import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 interface Donor {
   name: string;
@@ -15,35 +16,44 @@ interface Donor {
   phone: string;
 }
 
-const predefinedDonors: Donor[] = [
-  { name: 'John Doe', location: 'New York', petType: 'Dog', petAge: '3 years', petWeight: '25 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'A+', mail: 'john.doe@example.com', phone: '123-456-7890' },
-  { name: 'Jane Smith', location: 'Los Angeles', petType: 'Cat', petAge: '2 years', petWeight: '15 kg', vaccinationStatus: 'Partial', recentIllness: 'Fever', medicalHistory6Months: 'Minor surgery', petBloodType: 'O-', mail: 'jane.smith@example.com', phone: '234-567-8901' },
-  { name: 'Sam Brown', location: 'Chicago', petType: 'Dog', petAge: '4 years', petWeight: '28 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Annual checkup', petBloodType: 'B+', mail: 'sam.brown@example.com', phone: '345-678-9012' },
-  { name: 'Lisa White', location: 'Houston', petType: 'Bird', petAge: '1 year', petWeight: '0.5 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'AB-', mail: 'lisa.white@example.com', phone: '456-789-0123' },
-  { name: 'Paul Black', location: 'Phoenix', petType: 'Dog', petAge: '5 years', petWeight: '32 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'A-', mail: 'paul.black@example.com', phone: '567-890-1234' },
-  { name: 'Amy Green', location: 'Philadelphia', petType: 'Cat', petAge: '3 years', petWeight: '18 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'O+', mail: 'amy.green@example.com', phone: '678-901-2345' },
-  { name: 'Tom Blue', location: 'San Antonio', petType: 'Dog', petAge: '2 years', petWeight: '22 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'B-', mail: 'tom.blue@example.com', phone: '789-012-3456' },
-  { name: 'Nina Red', location: 'San Diego', petType: 'Cat', petAge: '4 years', petWeight: '20 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'AB+', mail: 'nina.red@example.com', phone: '890-123-4567' },
-  { name: 'Jack Yellow', location: 'Dallas', petType: 'Dog', petAge: '3 years', petWeight: '26 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'A+', mail: 'jack.yellow@example.com', phone: '901-234-5678' },
-  { name: 'Emma Purple', location: 'San Jose', petType: 'Bird', petAge: '2 years', petWeight: '0.8 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'O-', mail: 'emma.purple@example.com', phone: '012-345-6789' },
-  { name: 'Michael Gray', location: 'Seattle', petType: 'Dog', petAge: '6 years', petWeight: '30 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'B+', mail: 'michael.gray@example.com', phone: '111-222-3333' },
-  { name: 'Sophia Brown', location: 'Boston', petType: 'Cat', petAge: '5 years', petWeight: '17 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'AB-', mail: 'sophia.brown@example.com', phone: '222-333-4444' },
-  { name: 'Daniel Lee', location: 'Miami', petType: 'Dog', petAge: '4 years', petWeight: '25 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'A-', mail: 'daniel.lee@example.com', phone: '333-444-5555' },
-  { name: 'Olivia King', location: 'Atlanta', petType: 'Cat', petAge: '3 years', petWeight: '16 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'O+', mail: 'olivia.king@example.com', phone: '444-555-6666' },
-  { name: 'Ethan Taylor', location: 'Denver', petType: 'Dog', petAge: '2 years', petWeight: '20 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'B-', mail: 'ethan.taylor@example.com', phone: '555-666-7777' },
-  { name: 'Isabella Wilson', location: 'Las Vegas', petType: 'Cat', petAge: '4 years', petWeight: '19 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'AB+', mail: 'isabella.wilson@example.com', phone: '666-777-8888' },
-  { name: 'James Martinez', location: 'Washington D.C.', petType: 'Dog', petAge: '5 years', petWeight: '28 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'A+', mail: 'james.martinez@example.com', phone: '777-888-9999' },
-  { name: 'Charlotte Anderson', location: 'Portland', petType: 'Cat', petAge: '3 years', petWeight: '18 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'O-', mail: 'charlotte.anderson@example.com', phone: '888-999-0000' },
-  { name: 'Alexander Thomas', location: 'San Francisco', petType: 'Dog', petAge: '4 years', petWeight: '30 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'B+', mail: 'alexander.thomas@example.com', phone: '999-000-1111' },
-  { name: 'Amelia Garcia', location: 'Austin', petType: 'Cat', petAge: '2 years', petWeight: '14 kg', vaccinationStatus: 'Up to date', recentIllness: 'None', medicalHistory6Months: 'Regular checkups', petBloodType: 'AB-', mail: 'amelia.garcia@example.com', phone: '000-111-2222' },
-];
-
+// Function to fetch donors from the API
+const fetchDonors = async (): Promise<Donor[]> => {
+  try {
+    const response = await axios.get('/api/donors'); // Adjust the URL as necessary
+    return response.data.map((item: any) => ({
+      name: `${item.firstName} ${item.lastName}`,
+      location: `${item.address}, ${item.city}, ${item.state}, ${item.pinCode}`,
+      petType: item.petType,
+      petAge: `${item.petAge} years`,
+      petWeight: `${item.petWeight} kg`,
+      vaccinationStatus: item.vaccinationStatus,
+      recentIllness: item.recentIllness,
+      medicalHistory6Months: item.medicalHistory6Months,
+      petBloodType: item.petBloodType, // Assuming you need to handle petBloodType separately or add it to your API
+      mail: item.email,
+      phone: item.phoneNumber,
+    }));
+  } catch (error) {
+    console.error('Error fetching donor data:', error);
+    return [];
+  }
+};
 
 const DogDonor: React.FC = () => {
-  const [donors, setDonors] = useState<Donor[]>(predefinedDonors);
+  const [donors, setDonors] = useState<Donor[]>([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [sortOption, setSortOption] = useState('');
-  const [filteredDonors, setFilteredDonors] = useState<Donor[]>(predefinedDonors);
+  const [filteredDonors, setFilteredDonors] = useState<Donor[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchDonors();
+      setDonors(data);
+      setFilteredDonors(data);
+    };
+
+    fetchData();
+  }, []);
 
   useEffect(() => {
     let sortedDonors = [...donors];
@@ -56,12 +66,13 @@ const DogDonor: React.FC = () => {
 
     setFilteredDonors(
       sortedDonors.filter(donor => {
+        const searchLower = searchTerm.toLowerCase();
         if (sortOption === 'location') {
-          return donor.location.toLowerCase().includes(searchTerm.toLowerCase());
+          return donor.location?.toLowerCase().includes(searchLower);
         } else if (sortOption === 'petBloodType') {
-          return donor.petBloodType.toLowerCase().includes(searchTerm.toLowerCase());
+          return donor.petBloodType?.toLowerCase().includes(searchLower);
         } else {
-          return donor.name.toLowerCase().includes(searchTerm.toLowerCase());
+          return donor.name?.toLowerCase().includes(searchLower);
         }
       })
     );
@@ -71,7 +82,7 @@ const DogDonor: React.FC = () => {
     <div className="min-h-screen bg-gray-900 text-white p-4">
       <div className="max-w-4xl mx-auto">
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6 bg-opacity-50">
-          <h1 className="text-3xl font-bold text-red-600">Welcome to the animal Blood Donor Directory</h1>
+          <h1 className="text-3xl font-bold text-red-600">Welcome to the Animal Blood Donor Directory</h1>
         </section>
 
         <section className="text-gray-900 p-6 rounded-lg shadow-lg mb-6">
