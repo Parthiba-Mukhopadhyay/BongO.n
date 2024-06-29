@@ -2,6 +2,8 @@ import { MongoClient } from 'mongodb';
 import { NextResponse } from 'next/server';
 import { NextRequest } from 'next/server';
 
+export const revalidate = 0;
+
 // Define the CampData type
 interface CampData {
   campName: string;
