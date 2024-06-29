@@ -12,7 +12,11 @@ interface BloodBank {
 
 const fetchBloodBank = async (): Promise<BloodBank[]> => {
   try {
-    const response = await axios.get('/api/vets'); // Adjust the URL as necessary
+    const response = await axios.get('/api/vets',{
+      headers: {
+        'Cache-Control': 'no-cache',
+      },
+    });
     return response.data.map((item: any) => ({
       name: `${item.clinicName}`,
       location: item.city,
