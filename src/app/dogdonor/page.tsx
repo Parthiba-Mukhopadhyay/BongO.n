@@ -169,5 +169,4 @@ const DogDonor: React.FC = () => {
   );
 };
 
-export const revalidate = 10;
 export default DogDonor;

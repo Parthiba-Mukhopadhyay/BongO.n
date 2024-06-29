@@ -129,5 +129,4 @@ const Vetclinics: React.FC = () => {
   );
 };
 
-export const revalidate = 10;
 export default Vetclinics;
