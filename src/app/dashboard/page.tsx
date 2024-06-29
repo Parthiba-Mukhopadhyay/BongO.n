@@ -4,6 +4,7 @@ import Link from "next/link";
 import UserRegistrationForm from "../components/UserRegistrationForm";
 import CampRegister from  "../components/CampRegister"
 import VetRegister from  "../components/VetRegister"
+import CallRequest from "../components/CallRequest";
 
 const Dashboard: React.FC = () => {
   const [isModalDonorOpen, setModalDonorOpen] = useState(false);
@@ -159,6 +160,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       )}
+      <CallRequest />
     </div>
   );
 };
