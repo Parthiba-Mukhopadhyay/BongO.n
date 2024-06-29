@@ -88,7 +88,7 @@ export default function ExtendedEmailSubscriptionForm() {
 
   return (
     <div className="max-w-md mx-auto mt-10">
-      <form onSubmit={subscribeHandler} className="bg-white shadow-md rounded px-8 py-6">
+      <form onSubmit={subscribeHandler} className="bg-white rounded px-8 py-6 overflow-y-scroll h-[500px]">
         {/* Form Fields */}
         {['firstName', 'lastName', 'state', 'city', 'address', 'pinCode', 'email', 'phoneNumber', 'petType', 'petAge', 'petWeight'].map((field) => (
           <div className="mb-4" key={field}>
