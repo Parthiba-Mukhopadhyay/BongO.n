@@ -138,4 +138,5 @@ const Rescuecenter: React.FC = () => {
   );
 };
 
+export const revalidate = 10;
 export default Rescuecenter;
