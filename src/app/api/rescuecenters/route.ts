@@ -11,9 +11,16 @@ export async function GET(req: NextRequest) {
 
     const donors = await collection.find({}).toArray();
 
-    return NextResponse.json(donors, { status: 200 });
+    const response = NextResponse.json(donors, { status: 200 });
+    
+    // Set cache-control headers to ensure fresh data is fetched
+    response.headers.set('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+
+    return response;
   } catch (error) {
     console.error('Error connecting to MongoDB:', error);
     return NextResponse.json({ message: 'Failed to fetch data.' }, { status: 500 });
+  } finally {
+    await client.close();
   }
 }
