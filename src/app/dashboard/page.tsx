@@ -1,7 +1,7 @@
 'use client';
 import React from "react";
 import Link from "next/link";
-
+import PetMedicalCampRegistrationForm from "../components/CampRegister";
 const Dashboard: React.FC = () => {
   return (
     <div className="min-h-screen bg-gray-900 text-white p-4">
@@ -79,6 +79,7 @@ const Dashboard: React.FC = () => {
           </div>
         </div>
       </div>
+      <PetMedicalCampRegistrationForm/>
     </div>
   );
 };
