@@ -1,4 +1,4 @@
-
+![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/1bd14b6e-ae57-4fe3-8ce8-f224ec5f969c)
 ---
 
 # PAWsitive
@@ -205,34 +205,35 @@ Follow these steps to start and run the PAWsitive project locally:
 Here are the steps to navigate through the PAWsitive application:
 
 1. **Landing Page**: The homepage of the PAWsitive application.
+![landing](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed)
 
 2. **Login/Sign Up**: Authenticate users via Kinde for secure access.
+![sign in](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/721091c4-89a3-4a5c-a24a-9b5eb5e45c53)
+![sign up](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/df6d5c0e-ac9a-4baf-ab2d-93d0e3595d4d)
 
 3. **Dashboard**: The main interface with access to all features.
+ - **Spotlight Section**: Highlight ongoing projects and campaigns.
+ - **Call Support**: Access voice assistant support powered by Callchimp.AI.
+![dashboard1](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/2ddb3b0e-2002-45f6-9648-b0f91956d4f2)
 
-4. **Spotlight Section**: Highlight ongoing projects and campaigns.
-
-5. **Call Support**: Access voice assistant support powered by Callchimp.AI.
-
-6. **Services**:
+ - **Services**:
    - **View Donors**: Search and filter through blood donors.
-
    - **View Veterinary Clinics**: Locate nearby veterinary clinics.
-
    - **View Rescue Centers**: Find rescue centers and ambulance services.
 
+![dashboard2](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/c9c66679-9674-4ff0-96be-3454ef8a1bf5)
 
-8. **Collaborations**:
+ - **Collaborations**:
    - **Register as Donor**: Sign up as a blood donor.
-
    - **Register as Vet Clinic**: Register a veterinary clinic.
-
    - **Register as Rescue Center**: Enroll a rescue center.
-
    - **Register Events and Campaigns**: Organize events and campaigns.
+     
+![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/f9c35cfa-00b5-4e1a-825a-b20960de4db4)
 
 
-10. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
+4. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
+![image](https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290)
 
 
 ## Detailed Working of the Project
