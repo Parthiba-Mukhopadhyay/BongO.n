@@ -2,6 +2,8 @@
 
 # PAWsitive
 
+Visit and Support us at - www.bepawsitive.xyz
+
 ## Project Inspiration
 The inspiration for PAWsitive came from the need to create a centralized platform that connects pet owners with essential services such as blood donors, veterinary clinics, and rescue centers. Our goal is to ensure the well-being of pets by making it easier for their owners to find and access the necessary resources.
 
@@ -167,11 +169,16 @@ Here are the steps to navigate through the PAWsitive application:
 
 For a comprehensive understanding of how the PAWsitive project works, you can watch our video walkthrough on youtube:
 
-[Watch the Detailed Video Walkthrough](https://your-video-link-here)
+[Watch the Detailed Video Walkthrough](https://youtu.be/_PkeZ2sBX1o)
 
 ## Team
 - **Parthiba Mukhopadhyay**: Full Stack Developer
 - **Mainak Chattopadhyay**: Full Stack Developer
 - **Aritro Saha**: Full Stack Developer
+
+#### Built at Hack4Bengal - Eastern India's Largest Hackathon
+<img width="228" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/691b4b01-039b-4a5b-941e-20190d439f70">
+
+
 
 ---
