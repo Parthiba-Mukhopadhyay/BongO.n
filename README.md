@@ -37,7 +37,7 @@ For user authentication using OTP, login, and signup.
 To upload images of certificates for dog vaccination certificate status.
 
 ### Callchimp.ai
-<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/5cab4f57-63fb-483e-b165-e22a3b2511d7">
+<img width="150" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/5cab4f57-63fb-483e-b165-e22a3b2511d7">
 
 To integrate a calling service that tackles user doubts related to pet-related queries. 
 The architecture of the API Calls is explained below.
