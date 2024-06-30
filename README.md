@@ -26,71 +26,21 @@ PAWsitive is a comprehensive web application designed to help pet owners find bl
 
 ## Third-Party Technologies Used
 
-### Kinde
+### Kinde Authentication Service
+<img width="133" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/65d714e4-f522-4739-aacd-a9dc209c7e6a">
+
 For user authentication using OTP, login, and signup.
 
-#### Integration Steps:
-1. **Install Kinde SDK**:
-   ```bash
-   npm install @kinde-oss/kinde
-   ```
-2. **Initialize Kinde**:
-   ```javascript
-   import { KindeClient } from '@kinde-oss/kinde';
+### UploadThing
+<img width="138" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/a9086357-b7ad-45ea-80ab-0594fec4fc44">
 
-   const kinde = new KindeClient({
-     clientId: 'your-client-id',
-     domain: 'your-kinde-domain'
-   });
-   ```
-3. **Set Up OTP Login**:
-   ```javascript
-   kinde.sendOtp({
-     email: 'user@example.com'
-   }).then(response => {
-     // Handle OTP sent response
-   });
-   ```
-4. **Verify OTP**:
-   ```javascript
-   kinde.verifyOtp({
-     email: 'user@example.com',
-     otp: '123456'
-   }).then(response => {
-     // Handle verified response
-   });
-   ```
-
-### Uploadthing
 To upload images of certificates for dog vaccination certificate status.
 
-#### Integration Steps:
-1. **Install Uploadthing SDK**:
-   ```bash
-   npm install @uploadthing/sdk
-   ```
-2. **Initialize Uploadthing**:
-   ```javascript
-   import Uploadthing from '@uploadthing/sdk';
-
-   const uploadthing = new Uploadthing({
-     apiKey: 'your-api-key'
-   });
-   ```
-3. **Upload Image**:
-   ```javascript
-   uploadthing.upload({
-     file: imageFile,
-     onProgress: (progress) => {
-       // Handle progress updates
-     }
-   }).then(response => {
-     // Handle upload response
-   });
-   ```
-
 ### Callchimp.ai
-To integrate a calling service that tackles user doubts.
+<img width="275" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/5cab4f57-63fb-483e-b165-e22a3b2511d7">
+
+To integrate a calling service that tackles user doubts related to pet-related queries. 
+The architecture of the API Calls is explained below.
 
 #### Integration Steps:
 1. **Authentication**:
@@ -138,39 +88,14 @@ To integrate a calling service that tackles user doubts.
    ```
 
 ### Gemini API
+<img width="211" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/fc22ce4d-31aa-4b52-92fd-fd4b36da31c4">
+
 To create a custom chatbot for solving animal-related user queries.
 
-#### Integration Steps:
-1. **Install Gemini SDK**:
-   ```bash
-   npm install @gemini/sdk
-   ```
-2. **Initialize Gemini**:
-   ```javascript
-   import GeminiClient from '@gemini/sdk';
+### .xyz Domain 
+<img width="179" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/94cd7279-9744-4e4c-9e42-97a954bf1c64">
 
-   const gemini = new GeminiClient({
-     apiKey: 'your-api-key'
-   });
-   ```
-3. **Create Chatbot**:
-   ```javascript
-   gemini.createChatbot({
-     name: 'PAWsitive Bot',
-     description: 'Handles animal-related queries'
-   }).then(response => {
-     // Handle create chatbot response
-   });
-   ```
-4. **Send Message to Chatbot**:
-   ```javascript
-   gemini.sendMessage({
-     botId: 'bot-id',
-     message: 'What do you need help with today?'
-   }).then(response => {
-     // Handle chatbot response
-   });
-   ```
+To host the Website on a custom domain name.
 
 ## How to Start and Run the Project
 
@@ -187,7 +112,7 @@ Follow these steps to start and run the PAWsitive project locally:
    ```
 
 3. **Create a `.env.local` file**:
-   Add your API keys for Kinde, Next.js, MongoDB, Gemini, and Uploadlink in the `.env.local` file.
+   Add your API keys for Kinde Auth, Next.js, MongoDB, Gemini, and UploadThing in the `.env.local` file.
 
 4. **Install dependencies**:
    ```bash
