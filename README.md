@@ -27,17 +27,17 @@ PAWsitive is a comprehensive web application designed to help pet owners find bl
 ## Third-Party Technologies Used
 
 ### Kinde Authentication Service
-<img width="133" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/65d714e4-f522-4739-aacd-a9dc209c7e6a">
+<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/65d714e4-f522-4739-aacd-a9dc209c7e6a">
 
 For user authentication using OTP, login, and signup.
 
 ### UploadThing
-<img width="138" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/a9086357-b7ad-45ea-80ab-0594fec4fc44">
+<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/a9086357-b7ad-45ea-80ab-0594fec4fc44">
 
 To upload images of certificates for dog vaccination certificate status.
 
 ### Callchimp.ai
-<img width="275" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/5cab4f57-63fb-483e-b165-e22a3b2511d7">
+<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/5cab4f57-63fb-483e-b165-e22a3b2511d7">
 
 To integrate a calling service that tackles user doubts related to pet-related queries. 
 The architecture of the API Calls is explained below.
@@ -88,12 +88,12 @@ The architecture of the API Calls is explained below.
    ```
 
 ### Gemini API
-<img width="211" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/fc22ce4d-31aa-4b52-92fd-fd4b36da31c4">
+<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/fc22ce4d-31aa-4b52-92fd-fd4b36da31c4">
 
 To create a custom chatbot for solving animal-related user queries.
 
 ### .xyz Domain 
-<img width="179" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/94cd7279-9744-4e4c-9e42-97a954bf1c64">
+<img width="138" height="70" alt="image" src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/88925745/94cd7279-9744-4e4c-9e42-97a954bf1c64">
 
 To host the Website on a custom domain name.
 
@@ -132,7 +132,7 @@ Follow these steps to start and run the PAWsitive project locally:
 Here are the steps to navigate through the PAWsitive application:
 
 1. **Landing Page**: The homepage of the PAWsitive application.
-<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed" width="600" height="400" />
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/193dcbda-2cc9-445c-a2f0-61e58e1922ed" width="600" height="350" />
 
 2. **Login/Sign Up**: Authenticate users via Kinde for secure access.
    <br/>
@@ -160,7 +160,7 @@ Here are the steps to navigate through the PAWsitive application:
 
 
 4. **AI Chatbot**: Use the Gemini-powered chatbot for animal-related queries.
-<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290" width="400" height="600" />
+<img src="https://github.com/Parthiba-Mukhopadhyay/BongO.n/assets/89331202/23812d42-a331-48bd-a6be-6a14ac298290" width="300" height="400" />
 
 
 ## Detailed Working of the Project
